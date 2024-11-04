@@ -1,0 +1,41 @@
+id,name,email,password,subjects,maxHoursPerDay
+1,Dr. Abdul Wahid,abc@iiitdwd.ac.in,pass123,Introduction to DS and AI;AI for Cybersecurity,4
+2,Dr. Animesh Chaturvedi,abc@iiitdwd.ac.in,pass123,Data Science System;Algorithms and Artificial Intelligence,4
+3,Dr. Animesh Roy,abc@iiitdwd.ac.in,pass123,Discrete Mathematics,4
+4,Dr. Anand P B,abc@iiitdwd.ac.in,pass123,Probability,4
+5,Dr. Anushree Kini,abc@iiitdwd.ac.in,pass123,Economics;Finance and Accounting,4
+6,Dr. Aswath,abc@iiitdwd.ac.in,pass123,Environmental Studies,4
+7,Dr. Bharatesh Chakravarthi,abc@iiitdwd.ac.in,pass123,Human-Computer Interaction (Elective),4
+8,Dr. C B Akki,abc@iiitdwd.ac.in,pass123,Computer Networks,4
+9,Dr. Chandrika Kamath,abc@iiitdwd.ac.in,pass123,Professional Communication;Happiness and Wellbeing,4
+10,Dr. Chinmayananda,abc@iiitdwd.ac.in,pass123,Advanced Digital Communication System (Elective),4
+11,Dr. Deepak,abc@iiitdwd.ac.in,pass123,Introduction to Algorithms (Elective 1),4
+12,Dr. Dibyajyoti Guha,abc@iiitdwd.ac.in,pass123,Design & Analysis of Algorithms;Deep Computer Vision,4
+13,Dr. Girish GN,abc@iiitdwd.ac.in,pass123,Healthcare Data Analytics;Artificial Intelligence,4
+14,Dr. Jagadeesha R Bhat,abc@iiitdwd.ac.in,pass123,Digital Design,4
+15,Dr. Jagadish D N,abc@iiitdwd.ac.in,pass123,Introduction to VLSI Design;Energy Efficient Neural Networks,4
+16,Dr. Krishendu Ghosh,abc@iiitdwd.ac.in,pass123,Artificial Intelligence;Information Retrieval,4
+17,Dr. Lakshman,abc@iiitdwd.ac.in,pass123,Probability;Linear Algebra,4
+18,Dr. Malay,abc@iiitdwd.ac.in,pass123,Design & Analysis of Algorithms;Virtualization and Cloud Computing,4
+19,Dr. Manjunath KV,abc@iiitdwd.ac.in,pass123,Problem Solving through Programming;Object Oriented Programming,4
+20,Dr. Nataraj,abc@iiitdwd.ac.in,pass123,Microprocessors and Micro-controllers;Generative AI,4
+21,Dr. Navyashree,abc@iiitdwd.ac.in,pass123,Industrial Social Psychology,4
+22,Dr. Pavan,abc@iiitdwd.ac.in,pass123,Graph Theory,4
+23,Dr. Prabhu Prasad B M,abc@iiitdwd.ac.in,pass123,Computer Architecture,4
+24,Dr. Prakash Pawar,abc@iiitdwd.ac.in,pass123,Linear Integrated Circuits;Internet of Things,4
+25,Dr. Rajendra Hegadi,abc@iiitdwd.ac.in,pass123,Cryptography;Introduction to Cybersecurity,4
+26,Dr. Rajesh,abc@iiitdwd.ac.in,pass123,Language and Communication,4
+27,Dr. Ramesh Athe,abc@iiitdwd.ac.in,pass123,Statistics;Statistics for Computer Science,4
+28,Dr. Shirshendu Layek,abc@iiitdwd.ac.in,pass123,Computer Communication Networks;DevOps (Elective),4
+29,Dr. Siddharth R,abc@iiitdwd.ac.in,pass123,Introduction to DS and AI;Visualization and App Development,4
+30,Dr. Sibasankar Padhy,abc@iiitdwd.ac.in,pass123,Signals and Systems;Image Processing and Computer Vision,4
+31,Dr. Somen Bhattacharjee,abc@iiitdwd.ac.in,pass123,Electromagnetic Theory;Antennas & Radar Systems,4
+32,Dr. Suvadip Hazra,abc@iiitdwd.ac.in,pass123,Problem Solving through Programming;Advanced Algorithm Design,4
+33,Dr. Sunil C K,abc@iiitdwd.ac.in,pass123,Problem Solving through Programming;Statistics for Computer Science,4
+34,Dr. Sunil Kumar P V,abc@iiitdwd.ac.in,pass123,Bioinformatics;Machine Learning,4
+35,Dr. Sadhvi,abc@iiitdwd.ac.in,pass123,Discrete Mathematics;Computer Networks,4
+36,Dr. Utkarsh Khaire,abc@iiitdwd.ac.in,pass123,Graphs and Social Networks;Advanced Optimization Technique,4
+37,Guest Faculty,abc@iiitdwd.ac.in,pass123,Mathematics for Data Science;Ethics,4
+38,Dr. Vivekraj,abc@iiitdwd.ac.in,pass123,Object Oriented Programming;Design & Analysis of Algorithms,4
+39,Dr. Pramod,abc@iiitdwd.ac.in,pass123,Object Oriented Programming;Parallel Computing,4
+40,Dr. Sandesh,abc@iiitdwd.ac.in,pass123,Introduction to Design,4
