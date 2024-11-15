@@ -7,8 +7,7 @@ public class Course {
     private String courseCode;
     private String name;
     private String courseType; // "regular" or "elective"
-    private String branch; // e.g., "CSE", "DSAI", "ECE"
-    private String section; // e.g., "A" or "B" for CSE
+    private List<Integer> batchIds; // Replaced `branch` and `section` with `batchIds`
     private int lectureHours;
     private int theoryHours;
     private int practicalHours; // Previously `hasLab`; now hours for practicals
@@ -16,14 +15,14 @@ public class Course {
     private int hoursPerWeek;
     private List<Faculty> eligibleFaculty;
 
-    public Course(Long id, String courseCode, String name, String courseType, String branch, String section,
+
+    public Course(Long id, String courseCode, String name, String courseType, List<Integer> batchIds,
                   int lectureHours, int theoryHours, int practicalHours, int credits, List<Faculty> eligibleFaculty) {
         this.id = id;
         this.courseCode = courseCode;
         this.name = name;
         this.courseType = courseType;
-        this.branch = branch;
-        this.section = section;
+        this.batchIds = batchIds; // Updated to use batchIds
         this.lectureHours = lectureHours;
         this.theoryHours = theoryHours;
         this.practicalHours = practicalHours;
@@ -50,11 +49,8 @@ public class Course {
     public String getCourseType() { return courseType; }
     public void setCourseType(String courseType) { this.courseType = courseType; }
 
-    public String getBranch() { return branch; }
-    public void setBranch(String branch) { this.branch = branch; }
-
-    public String getSection() { return section; }
-    public void setSection(String section) { this.section = section; }
+    public List<Integer> getBatchIds() { return batchIds; } // Updated getter
+    public void setBatchIds(List<Integer> batchIds) { this.batchIds = batchIds; } // Updated setter
 
     public int getLectureHours() { return lectureHours; }
     public void setLectureHours(int lectureHours) {
@@ -89,8 +85,7 @@ public class Course {
                 ", courseCode='" + courseCode + '\'' +
                 ", name='" + name + '\'' +
                 ", courseType='" + courseType + '\'' +
-                ", branch='" + branch + '\'' +
-                ", section='" + section + '\'' +
+                ", batchIds=" + batchIds +  // Updated to display batchIds
                 ", lectureHours=" + lectureHours +
                 ", theoryHours=" + theoryHours +
                 ", practicalHours=" + practicalHours +

@@ -119,17 +119,22 @@ public class CSVDataLoader {
                                 .ifPresent(eligibleFaculty::add);
                     }
 
+                    // Parse batchIds (changed from branch and section to batchIds)
+                    List<Integer> batchIds = new ArrayList<>();
+                    for (String batchId : row[4].trim().split(";")) {
+                        batchIds.add(Integer.parseInt(batchId.trim()));
+                    }
+
                     Course course = new Course(
                             Long.parseLong(row[0].trim()),                // id
                             row[1].trim(),                                // courseCode
                             row[2].trim(),                                // name
                             row[3].trim(),                                // courseType (regular or elective)
-                            row[4].trim(),                                // branch
-                            row[5].trim(),                                // section
-                            Integer.parseInt(row[6].trim()),              // lecture hours
-                            Integer.parseInt(row[7].trim()),              // theory hours
-                            Integer.parseInt(row[8].trim()),              // practical hours (previously hasLab)
-                            Integer.parseInt(row[9].trim()),              // credits
+                            batchIds,                                     // List of batch IDs
+                            Integer.parseInt(row[5].trim()),              // lecture hours
+                            Integer.parseInt(row[6].trim()),              // theory hours
+                            Integer.parseInt(row[7].trim()),              // practical hours
+                            Integer.parseInt(row[8].trim()),              // credits
                             eligibleFaculty                               // eligible faculty list
                     );
 

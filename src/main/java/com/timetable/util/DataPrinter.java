@@ -40,8 +40,7 @@ public class DataPrinter {
                     ", Code: " + course.getCourseCode() +
                     ", Name: " + course.getName() +
                     ", Type: " + course.getCourseType() +
-                    ", Branch: " + course.getBranch() +
-                    ", Section: " + course.getSection() +
+                    ", BatchIds: " + course.getBatchIds() +
                     ", Lecture Hours: " + course.getLectureHours() +
                     ", Theory Hours: " + course.getTheoryHours() +
                     ", Practical Hours: " + course.getPracticalHours() +
