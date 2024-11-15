@@ -43,4 +43,20 @@ public class TimeSlot {
     public int hashCode() { return Objects.hash(id); }
 
 
+    public int getTimeSlotIndex() {
+        switch (day.toLowerCase()) {
+            case "monday":
+                return 1;
+            case "tuesday":
+                return 2;
+            case "wednesday":
+                return 3;
+            case "thursday":
+                return 4;
+            case "friday":
+                return 5;
+            default:
+                throw new IllegalArgumentException("Invalid day: " + day);
+        }
+    }
 }

@@ -3,7 +3,11 @@ package com.timetable.domain;
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
+
+import java.util.List;
 import java.util.Objects;
+import com.timetable.util.CSVDataLoader;
+
 
 @PlanningEntity
 public class Lesson {
@@ -15,24 +19,25 @@ public class Lesson {
     @PlanningVariable(valueRangeProviderRefs = "facultyRange")
     private Faculty faculty;
 
-    @PlanningVariable(valueRangeProviderRefs = "roomRange")
+//    @PlanningVariable(valueRangeProviderRefs = "roomRange")
     private Room room;
 
     @PlanningVariable(valueRangeProviderRefs = "timeSlotRange")
     private TimeSlot timeSlot;
 
+    private List<Room> allRooms;
     // Removed 'hasLab' as it's not needed anymore; we use Course's isLabCourse method
     // private boolean hasLab; // Lab status based on course
 
     // Constructors
     public Lesson() {}
 
-    public Lesson(Long id, Course course, StudentBatch studentBatch) {
+    public Lesson(Long id, Course course, StudentBatch studentBatch, List<Room> allRooms) {
         this.id = id;
         this.course = course;
         this.studentBatch = studentBatch;
-        // Removed initialization of 'hasLab' since it's no longer a member variable
-        // this.hasLab = course.hasLab();
+        this.allRooms = allRooms;
+        assignPredefinedRoom();
     }
 
     // Getters and setters
@@ -42,12 +47,14 @@ public class Lesson {
     public Course getCourse() { return course; }
     public void setCourse(Course course) {
         this.course = course;
-        // Removed the update of 'hasLab' since it's no longer a member variable
-        // this.hasLab = course.hasLab();
+        assignPredefinedRoom();
     }
 
     public StudentBatch getStudentBatch() { return studentBatch; }
-    public void setStudentBatch(StudentBatch studentBatch) { this.studentBatch = studentBatch; }
+    public void setStudentBatch(StudentBatch studentBatch) {
+        this.studentBatch = studentBatch;
+        assignPredefinedRoom();
+    }
 
     public Faculty getFaculty() { return faculty; }
     public void setFaculty(Faculty faculty) { this.faculty = faculty; }
@@ -56,31 +63,53 @@ public class Lesson {
     public void setRoom(Room room) { this.room = room; }
 
     public TimeSlot getTimeSlot() { return timeSlot; }
-    public void setTimeSlot(TimeSlot timeSlot) { this.timeSlot = timeSlot; }
+    public void setTimeSlot(TimeSlot timeSlot) {
+        this.timeSlot = timeSlot;
+        assignPredefinedRoom();
+    }
 
     // Removed 'hasLab' getter since it's no longer a member variable
     // public boolean hasLab() { return hasLab; } // Lab status getter
 
-    // Custom methods for constraint checking
+    // Method to assign predefined room based on batch and course type
+    // Room Assignment Logic
+    public void assignPredefinedRoom() {
+        if (course == null || studentBatch == null || allRooms == null) return;
+
+        if (course.isLabCourse() && timeSlot != null) {
+            room = isLabTimeSlot(timeSlot)
+                    ? findRoomById(studentBatch.getPracticalRoomIDs().get(0))
+                    : findRoomById(studentBatch.getLectureRoomIDs().get(0));
+        } else {
+            room = findRoomById(studentBatch.getLectureRoomIDs().get(0));
+        }
+    }
+
+    private boolean isLabTimeSlot(TimeSlot timeSlot) {
+        // Example logic: check if timeSlot index matches predefined criteria
+        return timeSlot.getTimeSlotIndex() == (int) (id % 5) + 1;
+    }
+
+
+    private Room findRoomById(Long roomId) {
+        if (allRooms == null || roomId == null) return null;
+        return allRooms.stream()
+                .filter(room -> room.getId().equals(roomId))
+                .findFirst()
+                .orElse(null);
+    }
+
     public boolean isAssigned() {
         return faculty != null && room != null && timeSlot != null;
     }
 
     public boolean isValidFaculty(Faculty faculty) {
-        return course.getEligibleFaculty().contains(faculty);
-    }
-
-    // New method to check if the course is a lab course
-    public boolean isLabCourse() {
-        return course.isLabCourse(); // Check if the course is a lab course using the new method
+        return course != null && course.getEligibleFaculty().contains(faculty);
     }
 
     public boolean isValidRoom() {
-        if (isLabCourse()) {
-            return room.isLabRoom(); // Lab courses must be in practical rooms
-        } else {
-            return !room.isLabRoom(); // Lecture courses must be in regular rooms
-        }
+        if (room == null || course == null) return false;
+        return course.isLabCourse() == room.isLabRoom();
     }
 
     @Override
