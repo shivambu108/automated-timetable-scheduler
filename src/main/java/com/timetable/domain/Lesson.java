@@ -75,6 +75,14 @@ public class Lesson {
         return course.isLabCourse(); // Check if the course is a lab course using the new method
     }
 
+    public boolean isValidRoom() {
+        if (isLabCourse()) {
+            return room.isLabRoom(); // Lab courses must be in practical rooms
+        } else {
+            return !room.isLabRoom(); // Lecture courses must be in regular rooms
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

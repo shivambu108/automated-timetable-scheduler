@@ -20,7 +20,8 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 roomCapacity(factory), teacherQualification(factory), singleCoursePerDayForBatch(factory),
                 noClassesDuringLunchHour(factory), onlyOneLabPerCoursePerWeek(factory),
                 onlyOneLabPerBatchPerDay(factory), onlyLabCoursesInLabRooms(factory),
-                teacherPreferredTimeslot(factory), consecutiveLectures(factory), roomStability(factory),
+                lectureInRegularRooms(factory), teacherPreferredTimeslot(factory),
+                consecutiveLectures(factory), roomStability(factory),
                 balanceFacultyLoad(factory), balanceRoomLoad(factory), balanceBatchLoad(factory)
         };
     }
@@ -115,15 +116,32 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                         (batchDayKey, count) -> count - 1);
     }
 
+    //important location
+
+
 
     private Constraint onlyLabCoursesInLabRooms(ConstraintFactory factory) {
+        return factory.forEach(Lesson.class)
+                .filter(lesson -> lesson.getCourse() != null && lesson.getCourse().isLabCourse() &&
+                        lesson.getRoom() != null &&
+                        !(lesson.getRoom().getType() == RoomType.COMPUTER_LAB ||
+                                lesson.getRoom().getType() == RoomType.HARDWARE_LAB))
+                .penalize("Lab courses must be in lab rooms", HardSoftScore.ONE_HARD);
+    }
+
+
+    /**
+     * New Constraint: Ensure lecture classes are in regular rooms.
+     */
+    private Constraint lectureInRegularRooms(ConstraintFactory factory) {
         return factory.forEach(Lesson.class)
                 .filter(lesson -> lesson.getCourse() != null && !lesson.getCourse().isLabCourse() &&
                         lesson.getRoom() != null &&
                         (lesson.getRoom().getType() == RoomType.COMPUTER_LAB ||
                                 lesson.getRoom().getType() == RoomType.HARDWARE_LAB))
-                .penalize("Non-lab courses cannot be assigned to lab rooms", HardSoftScore.ONE_HARD);
+                .penalize("Lecture classes must not be in lab rooms", HardSoftScore.ONE_HARD);
     }
+
 
     // Soft Constraints
     private Constraint teacherPreferredTimeslot(ConstraintFactory factory) {
