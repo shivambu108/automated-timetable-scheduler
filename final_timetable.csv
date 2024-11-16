@@ -1,75 +1,348 @@
 Day,Time,Room,Batch,Course,Faculty
-Monday,09:00-10:30,101,CSE-A,Probability,Dr. Lakshman
-Monday,10:45-12:15,101,CSE-A,English Language and Communication,Dr. Rajesh
-Monday,14:30-16:00,101,CSE-A,Introduction to Design,Dr. Sandesh
-Monday,14:30-16:30,L106,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Monday,09:00-10:30,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Monday,09:00-10:30,101,CSE-A,Introduction to Design,Dr. Sandesh
+Monday,09:00-10:30,101,CSE-A,Probability,Dr. Anand P B
+Monday,09:00-10:30,101,CSE-A,Statistics for Computer Science,Dr. Ramesh Athe
+Monday,09:00-10:30,101,CSE-A,Bioinformatics,Dr. Sunil Kumar P V
+Monday,10:45-12:15,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Monday,10:45-12:15,101,CSE-A,Computer Architecture,Dr. Prabhu Prasad B M
+Monday,10:45-12:15,101,CSE-A,Internet of Things,Dr. Prakash Pawar
+Monday,10:45-12:15,101,CSE-A,Computer Graphics,Dr. Vivekraj
+Monday,12:15-13:15,101,CSE-A,Probability,Dr. Lakshman
+Monday,12:15-13:15,101,CSE-A,Industrial Social Psychology,Dr. Navyashree
+Monday,12:15-13:15,101,CSE-A,Computer Networks,Dr. C B Akki
+Monday,12:15-13:15,101,CSE-A,AI for Cybersecurity,Dr. Abdul Wahid
+Monday,14:30-16:30,101,CSE-A,Object Oriented Programming,Dr. Pramod
+Monday,14:30-16:00,101,CSE-A,Design & Analysis of Algorithms,Dr. Vivekraj
+Monday,14:30-16:00,101,CSE-A,Graph Theory,Dr. Pavan
+Monday,14:30-16:30,101,CSE-A,Cryptography and Information Security,Dr. Rajendra Hegadi
+Monday,14:30-16:30,101,CSE-A,Information Retrieval,Dr. Krishendu Ghosh
+Monday,14:30-16:00,101,CSE-A,Virtualization and Cloud Computing,Dr. Malay
+Monday,09:00-10:30,102,CSE-B,English Language and Communication,Dr. Rajesh
+Monday,09:00-10:30,102,CSE-B,Industrial Social Psychology,Dr. Navyashree
+Monday,09:00-10:30,102,CSE-B,Advanced Algorithm Design,Dr. Suvadip Hazra
+Monday,09:00-10:30,102,CSE-B,Computer Graphics,Dr. Vivekraj
 Monday,10:45-12:15,102,CSE-B,Probability,Dr. Lakshman
-Monday,12:15-13:15,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Monday,14:30-16:30,102,CSE-B,Introduction to Design,Dr. Sandesh
-Monday,09:00-10:30,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Monday,10:45-12:15,102,CSE-B,Probability,Dr. Anand P B
+Monday,10:45-12:15,102,CSE-B,Parallel Computing,Dr. Pramod
+Monday,10:45-12:15,102,CSE-B,Deep Computer Vision,Dr. Dibyajyoti Guha
+Monday,12:15-13:15,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Monday,12:15-13:15,102,CSE-B,Computer Architecture,Dr. Prabhu Prasad B M
+Monday,12:15-13:15,102,CSE-B,Artificial Intelligence,Dr. Girish GN
+Monday,12:15-13:15,102,CSE-B,Virtualization and Cloud Computing,Dr. Malay
+Monday,14:30-16:00,102,CSE-B,Introduction to Design,Dr. Sandesh
+Monday,14:30-16:30,L107,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Monday,14:30-16:30,L107,CSE-B,Object Oriented Programming,Dr. Vivekraj
+Monday,14:30-16:00,102,CSE-B,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Monday,14:30-16:00,102,CSE-B,Computer Networks,Dr. Sadhvi
+Monday,14:30-16:00,102,CSE-B,Information Retrieval,Dr. Krishendu Ghosh
+Monday,09:00-10:30,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Monday,09:00-10:30,103,DSAI,Introduction to Systems Thinking,Dr. Jagadeesha R Bhat
+Monday,09:00-10:30,103,DSAI,Visualization and App Development,Dr. Siddharth R
+Monday,09:00-10:30,103,DSAI,DevOps,Dr. Shirshendu Layek
 Monday,10:45-12:15,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Monday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Monday,14:30-16:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Monday,14:30-16:30,L108,DSAI,Language and Communication,Dr. Rajesh
+Monday,10:45-12:15,103,DSAI,Data and Business Analytics,Dr. Abdul Wahid
+Monday,10:45-12:15,103,DSAI,Computer Communication Networks,Dr. C B Akki
+Monday,10:45-12:15,103,DSAI,Human-Computer Interaction,Dr. Bharatesh Chakravarthi
+Monday,12:15-13:15,103,DSAI,Mathematics for Data Science,Guest Faculty
+Monday,12:15-13:15,103,DSAI,Object Oriented Programming,Dr. Manjunath KV
+Monday,12:15-13:15,103,DSAI,Algorithms and Artificial Intelligence,Dr. Krishendu Ghosh
+Monday,12:15-13:15,103,DSAI,Introduction to Cybersecurity,Dr. Rajendra Hegadi
+Monday,14:30-16:00,103,DSAI,Discrete Mathematics,Dr. Animesh Roy
+Monday,14:30-16:30,L108,DSAI,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Monday,14:30-16:30,L108,DSAI,Machine Learning,Dr. Sunil Kumar P V
+Monday,14:30-16:00,103,DSAI,Healthcare Data Analytics,Dr. Girish GN
+Monday,14:30-16:30,103,DSAI,Advanced Optimization Technique,Dr. Utkarsh Khaire
 Monday,09:00-10:30,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Monday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
+Monday,09:00-10:30,104,ECE,Signals and Systems,Dr. Sibasankar Padhy
+Monday,09:00-10:30,104,ECE,Internet of Things,Dr. Prakash Pawar
+Monday,09:00-10:30,104,ECE,Energy Efficient Neural Networks,Dr. Jagadish D N
+Monday,10:45-12:15,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Monday,10:45-12:15,104,ECE,Professional Communication,Dr. Chandrika Kamath
+Monday,10:45-12:15,104,ECE,Introduction to Algorithms,Dr. Deepak
+Monday,10:45-12:15,104,ECE,Antennas & Radar Systems,Dr. Somen Bhattacharjee
 Monday,12:15-13:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Monday,14:30-16:30,104,ECE,Calculus,Dr. Anand P B
-Monday,14:30-16:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,09:00-10:30,101,CSE-A,Probability,Dr. Lakshman
-Tuesday,10:45-12:15,101,CSE-A,English Language and Communication,Dr. Rajesh
-Tuesday,12:15-13:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,14:30-16:00,101,CSE-A,Introduction to Design,Dr. Sandesh
+Monday,12:15-13:15,104,ECE,Electromagnetic Theory,Dr. Somen Bhattacharjee
+Monday,12:15-13:15,104,ECE,Introduction to VLSI Design,Dr. Jagadish D N
+Monday,12:15-13:15,104,ECE,Generative AI,Dr. Nataraj
+Monday,14:30-16:00,104,ECE,Calculus,Dr. Anand P B
+Monday,14:30-16:00,104,ECE,Linear Algebra,Dr. Lakshman
+Monday,14:30-16:30,H109,ECE,Linear Integrated Circuits,Dr. Prakash Pawar
+Monday,14:30-16:00,104,ECE,Digital Signal Processing,Dr. Somen Bhattacharjee
+Monday,14:30-16:30,104,ECE,Happiness and Wellbeing,Dr. Chandrika Kamath
+Tuesday,09:00-10:30,101,CSE-A,Probability,Dr. Anand P B
+Tuesday,09:00-10:30,101,CSE-A,Internet of Things,Dr. Prakash Pawar
+Tuesday,09:00-10:30,101,CSE-A,Computer Graphics,Dr. Vivekraj
+Tuesday,10:45-12:15,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Tuesday,10:45-12:15,101,CSE-A,Computer Architecture,Dr. Prabhu Prasad B M
+Tuesday,10:45-12:15,101,CSE-A,Computer Networks,Dr. C B Akki
+Tuesday,10:45-12:15,101,CSE-A,Deep Computer Vision,Dr. Dibyajyoti Guha
+Tuesday,12:15-13:15,101,CSE-A,English Language and Communication,Dr. Rajesh
+Tuesday,12:15-13:15,101,CSE-A,Object Oriented Programming,Dr. Pramod
+Tuesday,12:15-13:15,101,CSE-A,Artificial Intelligence,Dr. Krishendu Ghosh
+Tuesday,12:15-13:15,101,CSE-A,Bioinformatics,Dr. Sunil Kumar P V
+Tuesday,14:30-16:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,14:30-16:00,101,CSE-A,Discrete Mathematics,Dr. Animesh Roy
+Tuesday,14:30-16:30,101,CSE-A,Design & Analysis of Algorithms,Dr. Vivekraj
+Tuesday,14:30-16:00,101,CSE-A,Statistics for Computer Science,Dr. Ramesh Athe
+Tuesday,14:30-16:30,101,CSE-A,Cryptography and Information Security,Dr. Rajendra Hegadi
+Tuesday,14:30-16:00,101,CSE-A,Information Retrieval,Dr. Krishendu Ghosh
 Tuesday,09:00-10:30,102,CSE-B,English Language and Communication,Dr. Rajesh
+Tuesday,09:00-10:30,102,CSE-B,Parallel Computing,Dr. Pramod
+Tuesday,09:00-10:30,102,CSE-B,Deep Computer Vision,Dr. Dibyajyoti Guha
 Tuesday,10:45-12:15,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,12:15-13:15,102,CSE-B,Probability,Dr. Lakshman
+Tuesday,10:45-12:15,102,CSE-B,Probability,Dr. Anand P B
+Tuesday,10:45-12:15,102,CSE-B,Advanced Algorithm Design,Dr. Suvadip Hazra
+Tuesday,10:45-12:15,102,CSE-B,AI for Cybersecurity,Dr. Abdul Wahid
+Tuesday,12:15-13:15,102,CSE-B,Computer Architecture,Dr. Prabhu Prasad B M
+Tuesday,12:15-13:15,102,CSE-B,Computer Networks,Dr. Sadhvi
+Tuesday,12:15-13:15,102,CSE-B,Virtualization and Cloud Computing,Dr. Malay
+Tuesday,14:30-16:00,102,CSE-B,Probability,Dr. Lakshman
+Tuesday,14:30-16:00,102,CSE-B,Discrete Mathematics,Dr. Sadhvi
+Tuesday,14:30-16:30,102,CSE-B,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Tuesday,14:30-16:00,102,CSE-B,Statistics for Computer Science,Dr. Sunil C K
+Tuesday,14:30-16:30,102,CSE-B,Information Retrieval,Dr. Krishendu Ghosh
+Tuesday,14:30-16:00,102,CSE-B,Bioinformatics,Dr. Sunil Kumar P V
 Tuesday,09:00-10:30,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Tuesday,10:45-12:15,103,DSAI,Mathematics for Data Science,Guest Faculty
-Tuesday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Tuesday,09:00-10:30,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Tuesday,09:00-10:30,103,DSAI,Ethics,Guest Faculty
+Tuesday,09:00-10:30,103,DSAI,Machine Learning,Dr. Sunil Kumar P V
+Tuesday,09:00-10:30,103,DSAI,Human-Computer Interaction,Dr. Bharatesh Chakravarthi
+Tuesday,10:45-12:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Tuesday,10:45-12:15,103,DSAI,Discrete Mathematics,Dr. Animesh Roy
+Tuesday,10:45-12:15,103,DSAI,Algorithms and Artificial Intelligence,Dr. Krishendu Ghosh
+Tuesday,10:45-12:15,103,DSAI,Advanced Optimization Technique,Dr. Utkarsh Khaire
+Tuesday,12:15-13:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Tuesday,12:15-13:15,103,DSAI,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Tuesday,12:15-13:15,103,DSAI,Computer Communication Networks,Dr. C B Akki
+Tuesday,12:15-13:15,103,DSAI,Data Science System,Dr. Animesh Chaturvedi
+Tuesday,14:30-16:30,103,DSAI,Mathematics for Data Science,Guest Faculty
+Tuesday,14:30-16:30,L108,DSAI,Data and Business Analytics,Dr. Abdul Wahid
+Tuesday,14:30-16:00,103,DSAI,Object Oriented Programming,Dr. Manjunath KV
+Tuesday,14:30-16:00,103,DSAI,Graphs and Social Networks,Dr. Utkarsh Khaire
+Tuesday,14:30-16:30,L108,DSAI,Visualization and App Development,Dr. Siddharth R
+Tuesday,14:30-16:30,103,DSAI,Healthcare Data Analytics,Dr. Girish GN
+Tuesday,14:30-16:00,103,DSAI,Introduction to Cybersecurity,Dr. Rajendra Hegadi
+Tuesday,09:00-10:30,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,09:00-10:30,104,ECE,Introduction to Algorithms,Dr. Deepak
+Tuesday,09:00-10:30,104,ECE,Antennas & Radar Systems,Dr. Somen Bhattacharjee
 Tuesday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
-Tuesday,12:15-13:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Tuesday,14:30-16:30,H109,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Wednesday,09:00-10:30,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Wednesday,10:45-12:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,10:45-12:15,104,ECE,Professional Communication,Dr. Chandrika Kamath
+Tuesday,10:45-12:15,104,ECE,Advanced Digital Communication System,Dr. Chinmayananda
+Tuesday,10:45-12:15,104,ECE,Image Processing and Computer Vision,Dr. Sibasankar Padhy
+Tuesday,12:15-13:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Tuesday,12:15-13:15,104,ECE,Microprocessors and Micro-controllers,Dr. Nataraj
+Tuesday,12:15-13:15,104,ECE,Internet of Things,Dr. Prakash Pawar
+Tuesday,12:15-13:15,104,ECE,Energy Efficient Neural Networks,Dr. Jagadish D N
+Tuesday,14:30-16:30,104,ECE,Calculus,Dr. Anand P B
+Tuesday,14:30-16:00,104,ECE,Electromagnetic Theory,Dr. Somen Bhattacharjee
+Tuesday,14:30-16:30,104,ECE,Signals and Systems,Dr. Sibasankar Padhy
+Tuesday,14:30-16:30,104,ECE,Digital Signal Processing,Dr. Somen Bhattacharjee
+Tuesday,14:30-16:00,104,ECE,Introduction to VLSI Design,Dr. Jagadish D N
+Tuesday,14:30-16:30,104,ECE,Generative AI,Dr. Nataraj
+Wednesday,09:00-10:30,101,CSE-A,Probability,Dr. Lakshman
+Wednesday,09:00-10:30,101,CSE-A,Probability,Dr. Anand P B
+Wednesday,09:00-10:30,101,CSE-A,Artificial Intelligence,Dr. Krishendu Ghosh
+Wednesday,09:00-10:30,101,CSE-A,Bioinformatics,Dr. Sunil Kumar P V
+Wednesday,10:45-12:15,101,CSE-A,Introduction to Design,Dr. Sandesh
+Wednesday,10:45-12:15,101,CSE-A,Industrial Social Psychology,Dr. Navyashree
+Wednesday,10:45-12:15,101,CSE-A,Computer Networks,Dr. C B Akki
+Wednesday,10:45-12:15,101,CSE-A,Deep Computer Vision,Dr. Dibyajyoti Guha
+Wednesday,12:15-13:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,12:15-13:15,101,CSE-A,Design & Analysis of Algorithms,Dr. Vivekraj
+Wednesday,12:15-13:15,101,CSE-A,Graph Theory,Dr. Pavan
+Wednesday,12:15-13:15,101,CSE-A,AI for Cybersecurity,Dr. Abdul Wahid
+Wednesday,14:30-16:00,101,CSE-A,Discrete Mathematics,Dr. Animesh Roy
+Wednesday,14:30-16:30,L106,CSE-A,Computer Architecture,Dr. Prabhu Prasad B M
+Wednesday,14:30-16:00,101,CSE-A,Cryptography and Information Security,Dr. Rajendra Hegadi
+Wednesday,14:30-16:30,101,CSE-A,Internet of Things,Dr. Prakash Pawar
+Wednesday,14:30-16:00,101,CSE-A,Virtualization and Cloud Computing,Dr. Malay
+Wednesday,14:30-16:30,101,CSE-A,Computer Graphics,Dr. Vivekraj
 Wednesday,09:00-10:30,102,CSE-B,English Language and Communication,Dr. Rajesh
-Wednesday,10:45-12:15,102,CSE-B,Introduction to Design,Dr. Sandesh
-Wednesday,12:15-13:15,102,CSE-B,Probability,Dr. Lakshman
-Wednesday,14:30-16:30,L107,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Wednesday,09:00-10:30,102,CSE-B,Computer Architecture,Dr. Prabhu Prasad B M
+Wednesday,09:00-10:30,102,CSE-B,Artificial Intelligence,Dr. Girish GN
+Wednesday,09:00-10:30,102,CSE-B,Computer Graphics,Dr. Vivekraj
+Wednesday,10:45-12:15,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Wednesday,10:45-12:15,102,CSE-B,Probability,Dr. Anand P B
+Wednesday,10:45-12:15,102,CSE-B,Parallel Computing,Dr. Pramod
+Wednesday,10:45-12:15,102,CSE-B,Virtualization and Cloud Computing,Dr. Malay
+Wednesday,12:15-13:15,102,CSE-B,Introduction to Design,Dr. Sandesh
+Wednesday,12:15-13:15,102,CSE-B,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Wednesday,12:15-13:15,102,CSE-B,Advanced Algorithm Design,Dr. Suvadip Hazra
+Wednesday,12:15-13:15,102,CSE-B,Bioinformatics,Dr. Sunil Kumar P V
+Wednesday,14:30-16:30,L107,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,14:30-16:30,102,CSE-B,Discrete Mathematics,Dr. Sadhvi
+Wednesday,14:30-16:00,102,CSE-B,Object Oriented Programming,Dr. Vivekraj
+Wednesday,14:30-16:30,102,CSE-B,Statistics for Computer Science,Dr. Sunil C K
+Wednesday,14:30-16:00,102,CSE-B,Computer Networks,Dr. Sadhvi
+Wednesday,14:30-16:00,102,CSE-B,AI for Cybersecurity,Dr. Abdul Wahid
+Wednesday,14:30-16:30,102,CSE-B,Deep Computer Vision,Dr. Dibyajyoti Guha
 Wednesday,09:00-10:30,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
-Wednesday,10:45-12:15,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Wednesday,09:00-10:30,103,DSAI,Ethics,Guest Faculty
+Wednesday,09:00-10:30,103,DSAI,Visualization and App Development,Dr. Siddharth R
+Wednesday,09:00-10:30,103,DSAI,Data Science System,Dr. Animesh Chaturvedi
+Wednesday,10:45-12:15,103,DSAI,Language and Communication,Dr. Rajesh
+Wednesday,10:45-12:15,103,DSAI,Introduction to Systems Thinking,Dr. Jagadeesha R Bhat
+Wednesday,10:45-12:15,103,DSAI,Graphs and Social Networks,Dr. Utkarsh Khaire
+Wednesday,10:45-12:15,103,DSAI,DevOps,Dr. Shirshendu Layek
 Wednesday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Wednesday,14:30-16:30,103,DSAI,Mathematics for Data Science,Guest Faculty
-Wednesday,09:00-10:30,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Wednesday,12:15-13:15,103,DSAI,Discrete Mathematics,Dr. Animesh Roy
+Wednesday,12:15-13:15,103,DSAI,Algorithms and Artificial Intelligence,Dr. Krishendu Ghosh
+Wednesday,12:15-13:15,103,DSAI,Human-Computer Interaction,Dr. Bharatesh Chakravarthi
+Wednesday,14:30-16:00,103,DSAI,Mathematics for Data Science,Guest Faculty
+Wednesday,14:30-16:30,L108,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Wednesday,14:30-16:30,103,DSAI,Data and Business Analytics,Dr. Abdul Wahid
+Wednesday,14:30-16:00,103,DSAI,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Wednesday,14:30-16:30,L108,DSAI,Computer Communication Networks,Dr. C B Akki
+Wednesday,14:30-16:00,103,DSAI,Machine Learning,Dr. Sunil Kumar P V
+Wednesday,14:30-16:00,103,DSAI,Healthcare Data Analytics,Dr. Girish GN
+Wednesday,09:00-10:30,104,ECE,Physics for ECE,Dr. Aswath
+Wednesday,09:00-10:30,104,ECE,Signals and Systems,Dr. Sibasankar Padhy
+Wednesday,09:00-10:30,104,ECE,Internet of Things,Dr. Prakash Pawar
+Wednesday,09:00-10:30,104,ECE,Energy Efficient Neural Networks,Dr. Jagadish D N
 Wednesday,10:45-12:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Wednesday,12:15-13:15,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Wednesday,14:30-16:30,104,ECE,Calculus,Dr. Anand P B
-Thursday,09:00-10:30,101,CSE-A,English Language and Communication,Dr. Rajesh
-Thursday,10:45-12:15,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Thursday,12:15-13:15,101,CSE-A,Introduction to Design,Dr. Sandesh
-Thursday,14:30-16:30,L106,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,10:45-12:15,104,ECE,Microprocessors and Micro-controllers,Dr. Nataraj
+Wednesday,10:45-12:15,104,ECE,Introduction to Algorithms,Dr. Deepak
+Wednesday,10:45-12:15,104,ECE,Image Processing and Computer Vision,Dr. Sibasankar Padhy
+Wednesday,12:15-13:15,104,ECE,Calculus,Dr. Anand P B
+Wednesday,12:15-13:15,104,ECE,Linear Integrated Circuits,Dr. Prakash Pawar
+Wednesday,14:30-16:30,H109,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Wednesday,14:30-16:00,104,ECE,Linear Algebra,Dr. Lakshman
+Wednesday,14:30-16:30,104,ECE,Introduction to VLSI Design,Dr. Jagadish D N
+Wednesday,14:30-16:00,104,ECE,Advanced Digital Communication System,Dr. Chinmayananda
+Thursday,09:00-10:30,101,CSE-A,Industrial Social Psychology,Dr. Navyashree
+Thursday,09:00-10:30,101,CSE-A,Internet of Things,Dr. Prakash Pawar
+Thursday,09:00-10:30,101,CSE-A,Computer Graphics,Dr. Vivekraj
+Thursday,10:45-12:15,101,CSE-A,English Language and Communication,Dr. Rajesh
+Thursday,10:45-12:15,101,CSE-A,Object Oriented Programming,Dr. Pramod
+Thursday,10:45-12:15,101,CSE-A,Artificial Intelligence,Dr. Krishendu Ghosh
+Thursday,10:45-12:15,101,CSE-A,Virtualization and Cloud Computing,Dr. Malay
+Thursday,12:15-13:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Thursday,12:15-13:15,101,CSE-A,Discrete Mathematics,Dr. Animesh Roy
+Thursday,12:15-13:15,101,CSE-A,Graph Theory,Dr. Pavan
+Thursday,12:15-13:15,101,CSE-A,Deep Computer Vision,Dr. Dibyajyoti Guha
+Thursday,14:30-16:30,L106,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Thursday,14:30-16:30,L106,CSE-A,Design & Analysis of Algorithms,Dr. Vivekraj
+Thursday,14:30-16:00,101,CSE-A,Statistics for Computer Science,Dr. Ramesh Athe
+Thursday,14:30-16:30,L106,CSE-A,Computer Networks,Dr. C B Akki
+Thursday,14:30-16:30,101,CSE-A,Information Retrieval,Dr. Krishendu Ghosh
+Thursday,14:30-16:00,101,CSE-A,AI for Cybersecurity,Dr. Abdul Wahid
 Thursday,09:00-10:30,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Thursday,10:45-12:15,102,CSE-B,Introduction to Design,Dr. Sandesh
-Thursday,12:15-13:15,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Thursday,09:00-10:30,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Thursday,10:45-12:15,103,DSAI,Language and Communication,Dr. Rajesh
-Thursday,14:30-16:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Thursday,09:00-10:30,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Thursday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
-Thursday,12:15-13:15,104,ECE,Calculus,Dr. Anand P B
-Friday,09:00-10:30,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Thursday,09:00-10:30,102,CSE-B,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Thursday,09:00-10:30,102,CSE-B,Artificial Intelligence,Dr. Girish GN
+Thursday,09:00-10:30,102,CSE-B,Bioinformatics,Dr. Sunil Kumar P V
+Thursday,10:45-12:15,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Thursday,10:45-12:15,102,CSE-B,Industrial Social Psychology,Dr. Navyashree
+Thursday,10:45-12:15,102,CSE-B,Deep Computer Vision,Dr. Dibyajyoti Guha
+Thursday,12:15-13:15,102,CSE-B,Probability,Dr. Lakshman
+Thursday,12:15-13:15,102,CSE-B,Discrete Mathematics,Dr. Sadhvi
+Thursday,12:15-13:15,102,CSE-B,Computer Graphics,Dr. Vivekraj
+Thursday,14:30-16:30,102,CSE-B,Introduction to Design,Dr. Sandesh
+Thursday,14:30-16:00,102,CSE-B,Object Oriented Programming,Dr. Vivekraj
+Thursday,14:30-16:30,L107,CSE-B,Computer Architecture,Dr. Prabhu Prasad B M
+Thursday,14:30-16:00,102,CSE-B,Statistics for Computer Science,Dr. Sunil C K
+Thursday,14:30-16:30,L107,CSE-B,Computer Networks,Dr. Sadhvi
+Thursday,14:30-16:00,102,CSE-B,Information Retrieval,Dr. Krishendu Ghosh
+Thursday,14:30-16:30,102,CSE-B,AI for Cybersecurity,Dr. Abdul Wahid
+Thursday,09:00-10:30,103,DSAI,Language and Communication,Dr. Rajesh
+Thursday,09:00-10:30,103,DSAI,Introduction to Systems Thinking,Dr. Jagadeesha R Bhat
+Thursday,09:00-10:30,103,DSAI,Algorithms and Artificial Intelligence,Dr. Krishendu Ghosh
+Thursday,09:00-10:30,103,DSAI,Human-Computer Interaction,Dr. Bharatesh Chakravarthi
+Thursday,10:45-12:15,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Thursday,10:45-12:15,103,DSAI,Discrete Mathematics,Dr. Animesh Roy
+Thursday,10:45-12:15,103,DSAI,Machine Learning,Dr. Sunil Kumar P V
+Thursday,10:45-12:15,103,DSAI,Introduction to Cybersecurity,Dr. Rajendra Hegadi
+Thursday,12:15-13:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Thursday,12:15-13:15,103,DSAI,Ethics,Guest Faculty
+Thursday,12:15-13:15,103,DSAI,Graphs and Social Networks,Dr. Utkarsh Khaire
+Thursday,12:15-13:15,103,DSAI,DevOps,Dr. Shirshendu Layek
+Thursday,14:30-16:30,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Thursday,14:30-16:00,103,DSAI,Object Oriented Programming,Dr. Manjunath KV
+Thursday,14:30-16:30,103,DSAI,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Thursday,14:30-16:00,103,DSAI,Computer Communication Networks,Dr. C B Akki
+Thursday,14:30-16:00,103,DSAI,Advanced Optimization Technique,Dr. Utkarsh Khaire
+Thursday,14:30-16:30,103,DSAI,Data Science System,Dr. Animesh Chaturvedi
+Thursday,09:00-10:30,104,ECE,Physics for ECE,Dr. Aswath
+Thursday,09:00-10:30,104,ECE,Microprocessors and Micro-controllers,Dr. Nataraj
+Thursday,09:00-10:30,104,ECE,Advanced Digital Communication System,Dr. Chinmayananda
+Thursday,09:00-10:30,104,ECE,Antennas & Radar Systems,Dr. Somen Bhattacharjee
+Thursday,10:45-12:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Thursday,10:45-12:15,104,ECE,Signals and Systems,Dr. Sibasankar Padhy
+Thursday,10:45-12:15,104,ECE,Internet of Things,Dr. Prakash Pawar
+Thursday,10:45-12:15,104,ECE,Energy Efficient Neural Networks,Dr. Jagadish D N
+Thursday,12:15-13:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Thursday,12:15-13:15,104,ECE,Linear Integrated Circuits,Dr. Prakash Pawar
+Thursday,12:15-13:15,104,ECE,Introduction to Algorithms,Dr. Deepak
+Thursday,12:15-13:15,104,ECE,Image Processing and Computer Vision,Dr. Sibasankar Padhy
+Thursday,14:30-16:30,H109,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Thursday,14:30-16:30,104,ECE,Linear Algebra,Dr. Lakshman
+Thursday,14:30-16:00,104,ECE,Electromagnetic Theory,Dr. Somen Bhattacharjee
+Thursday,14:30-16:30,H109,ECE,Digital Signal Processing,Dr. Somen Bhattacharjee
+Thursday,14:30-16:00,104,ECE,Happiness and Wellbeing,Dr. Chandrika Kamath
+Thursday,14:30-16:30,104,ECE,Generative AI,Dr. Nataraj
+Friday,09:00-10:30,101,CSE-A,English Language and Communication,Dr. Rajesh
+Friday,09:00-10:30,101,CSE-A,Design & Analysis of Algorithms,Dr. Vivekraj
+Friday,09:00-10:30,101,CSE-A,Computer Networks,Dr. C B Akki
+Friday,09:00-10:30,101,CSE-A,Bioinformatics,Dr. Sunil Kumar P V
 Friday,10:45-12:15,101,CSE-A,Probability,Dr. Lakshman
-Friday,12:15-13:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Friday,10:45-12:15,101,CSE-A,Probability,Dr. Anand P B
+Friday,10:45-12:15,101,CSE-A,Graph Theory,Dr. Pavan
+Friday,10:45-12:15,101,CSE-A,Deep Computer Vision,Dr. Dibyajyoti Guha
+Friday,12:15-13:15,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Friday,12:15-13:15,101,CSE-A,Computer Architecture,Dr. Prabhu Prasad B M
+Friday,12:15-13:15,101,CSE-A,Artificial Intelligence,Dr. Krishendu Ghosh
+Friday,12:15-13:15,101,CSE-A,Virtualization and Cloud Computing,Dr. Malay
+Friday,14:30-16:00,101,CSE-A,Introduction to Design,Dr. Sandesh
+Friday,14:30-16:30,L106,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Friday,14:30-16:00,101,CSE-A,Discrete Mathematics,Dr. Animesh Roy
+Friday,14:30-16:30,L106,CSE-A,Object Oriented Programming,Dr. Pramod
+Friday,14:30-16:00,101,CSE-A,Statistics for Computer Science,Dr. Ramesh Athe
+Friday,14:30-16:30,101,CSE-A,Cryptography and Information Security,Dr. Rajendra Hegadi
+Friday,14:30-16:00,101,CSE-A,Information Retrieval,Dr. Krishendu Ghosh
+Friday,14:30-16:30,101,CSE-A,AI for Cybersecurity,Dr. Abdul Wahid
 Friday,09:00-10:30,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Friday,10:45-12:15,102,CSE-B,English Language and Communication,Dr. Rajesh
-Friday,14:30-16:30,L107,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Friday,09:00-10:30,103,DSAI,Language and Communication,Dr. Rajesh
-Friday,10:45-12:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
-Friday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Friday,14:30-16:30,L108,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Friday,09:00-10:30,104,ECE,Physics for ECE,Dr. Aswath
-Friday,10:45-12:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Friday,12:15-13:15,104,ECE,Calculus,Dr. Anand P B
+Friday,09:00-10:30,102,CSE-B,Industrial Social Psychology,Dr. Navyashree
+Friday,09:00-10:30,102,CSE-B,Parallel Computing,Dr. Pramod
+Friday,09:00-10:30,102,CSE-B,AI for Cybersecurity,Dr. Abdul Wahid
+Friday,10:45-12:15,102,CSE-B,Object Oriented Programming,Dr. Vivekraj
+Friday,10:45-12:15,102,CSE-B,Artificial Intelligence,Dr. Girish GN
+Friday,10:45-12:15,102,CSE-B,Bioinformatics,Dr. Sunil Kumar P V
+Friday,12:15-13:15,102,CSE-B,Probability,Dr. Anand P B
+Friday,12:15-13:15,102,CSE-B,Advanced Algorithm Design,Dr. Suvadip Hazra
+Friday,12:15-13:15,102,CSE-B,Computer Graphics,Dr. Vivekraj
+Friday,14:30-16:00,102,CSE-B,Discrete Mathematics,Dr. Sadhvi
+Friday,14:30-16:30,L107,CSE-B,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Friday,14:30-16:00,102,CSE-B,Statistics for Computer Science,Dr. Sunil C K
+Friday,14:30-16:30,102,CSE-B,Computer Networks,Dr. Sadhvi
+Friday,14:30-16:30,102,CSE-B,Information Retrieval,Dr. Krishendu Ghosh
+Friday,14:30-16:00,102,CSE-B,Virtualization and Cloud Computing,Dr. Malay
+Friday,09:00-10:30,103,DSAI,Mathematics for Data Science,Guest Faculty
+Friday,09:00-10:30,103,DSAI,Design & Analysis of Algorithms,Dr. Dibyajyoti Guha
+Friday,09:00-10:30,103,DSAI,Visualization and App Development,Dr. Siddharth R
+Friday,09:00-10:30,103,DSAI,DevOps,Dr. Shirshendu Layek
+Friday,10:45-12:15,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Friday,10:45-12:15,103,DSAI,Introduction to Systems Thinking,Dr. Jagadeesha R Bhat
+Friday,10:45-12:15,103,DSAI,Computer Communication Networks,Dr. C B Akki
+Friday,10:45-12:15,103,DSAI,Advanced Optimization Technique,Dr. Utkarsh Khaire
+Friday,12:15-13:15,103,DSAI,Data and Business Analytics,Dr. Abdul Wahid
+Friday,12:15-13:15,103,DSAI,Data Science System,Dr. Animesh Chaturvedi
+Friday,14:30-16:30,L108,DSAI,Language and Communication,Dr. Rajesh
+Friday,14:30-16:30,L108,DSAI,Object Oriented Programming,Dr. Manjunath KV
+Friday,14:30-16:00,103,DSAI,Graphs and Social Networks,Dr. Utkarsh Khaire
+Friday,14:30-16:30,103,DSAI,Healthcare Data Analytics,Dr. Girish GN
+Friday,14:30-16:00,103,DSAI,Introduction to Cybersecurity,Dr. Rajendra Hegadi
+Friday,09:00-10:30,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Friday,09:00-10:30,104,ECE,Professional Communication,Dr. Chandrika Kamath
+Friday,09:00-10:30,104,ECE,Advanced Digital Communication System,Dr. Chinmayananda
+Friday,09:00-10:30,104,ECE,Generative AI,Dr. Nataraj
+Friday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
+Friday,10:45-12:15,104,ECE,Linear Integrated Circuits,Dr. Prakash Pawar
+Friday,10:45-12:15,104,ECE,Introduction to VLSI Design,Dr. Jagadish D N
+Friday,10:45-12:15,104,ECE,Antennas & Radar Systems,Dr. Somen Bhattacharjee
+Friday,12:15-13:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Friday,12:15-13:15,104,ECE,Linear Algebra,Dr. Lakshman
+Friday,12:15-13:15,104,ECE,Happiness and Wellbeing,Dr. Chandrika Kamath
+Friday,12:15-13:15,104,ECE,Image Processing and Computer Vision,Dr. Sibasankar Padhy
+Friday,14:30-16:30,104,ECE,Calculus,Dr. Anand P B
 Friday,14:30-16:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Friday,14:30-16:30,H109,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Friday,14:30-16:00,104,ECE,Electromagnetic Theory,Dr. Somen Bhattacharjee
+Friday,14:30-16:30,H109,ECE,Microprocessors and Micro-controllers,Dr. Nataraj
+Friday,14:30-16:30,104,ECE,Digital Signal Processing,Dr. Somen Bhattacharjee

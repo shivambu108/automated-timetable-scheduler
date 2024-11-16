@@ -22,8 +22,16 @@ public class TimeTableApp {
     private static final Object[][] TIME_SLOT_DEFINITIONS = {
             {LocalTime.of(9, 0), LocalTime.of(10, 30), "LECTURE"},
             {LocalTime.of(10, 45), LocalTime.of(12, 15), "LECTURE"},
+            {LocalTime.of(11, 45), LocalTime.of(12, 15), "LECTURE"},
             {LocalTime.of(12, 15), LocalTime.of(13, 15), "LECTURE"},
+            {LocalTime.of(13, 30), LocalTime.of(15, 0), "LECTURE"},
             {LocalTime.of(14, 30), LocalTime.of(16, 0), "LECTURE"},
+            {LocalTime.of(15, 0), LocalTime.of(16, 30), "LECTURE"},
+            {LocalTime.of(16, 0), LocalTime.of(17, 30), "LECTURE"},
+            {LocalTime.of(16, 30), LocalTime.of(17, 30), "LECTURE"},
+            {LocalTime.of(16, 30), LocalTime.of(18, 0), "LECTURE"},
+            {LocalTime.of(9, 0), LocalTime.of(11, 0), "LAB"},
+            {LocalTime.of(11, 15), LocalTime.of(13, 15), "LAB"},
             {LocalTime.of(14, 30), LocalTime.of(16, 30), "LAB"}
     };
 
@@ -58,7 +66,7 @@ public class TimeTableApp {
                     .withSolutionClass(TimeTable.class)
                     .withEntityClasses(Lesson.class)
                     .withConstraintProviderClass(TimeTableConstraintProvider.class)
-                    .withTerminationSpentLimit(Duration.ofMinutes(1));
+                    .withTerminationSpentLimit(Duration.ofMinutes(10));
 
             // Solve timetable
             SolverFactory<TimeTable> solverFactory = SolverFactory.create(solverConfig);

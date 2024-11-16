@@ -162,12 +162,53 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
     }
 
     // Time-related Hard Constraints
+//    private Constraint noClassesDuringLunchHour(ConstraintFactory factory) {
+//        return factory.forEach(Lesson.class)
+//                .filter(this::isLunchHour)
+//                .penalize(HardSoftScore.ONE_HARD)
+//                .asConstraint("No classes during lunch hour");
+//    }
+
     private Constraint noClassesDuringLunchHour(ConstraintFactory factory) {
         return factory.forEach(Lesson.class)
-                .filter(this::isLunchHour)
+                .filter(lesson -> isLunchHourForYear(lesson))
                 .penalize(HardSoftScore.ONE_HARD)
-                .asConstraint("No classes during lunch hour");
+                .asConstraint("No classes during lunch hour per year group");
     }
+
+    private boolean isLunchHourForYear(Lesson lesson) {
+        // Get the year from the batch
+        int year = extractYearFromBatch(lesson.getStudentBatch());
+
+        // Get the lesson's time slot
+        LocalTime startTime = lesson.getTimeSlot().getStartTime();
+
+        // Check if the time falls within the lunch period for the corresponding year
+        if (year == 2024 || year == 2023) {
+            // 13:15-14:30 for 1st and 2nd year
+            return startTime.isAfter(LocalTime.of(13, 14)) &&
+                    startTime.isBefore(LocalTime.of(14, 31));
+        } else if (year == 2022 || year == 2021) {
+            // 12:15-13:15 for 3rd and 4th year
+            return startTime.isAfter(LocalTime.of(12, 14)) &&
+                    startTime.isBefore(LocalTime.of(13, 16));
+        }
+
+        return false;
+    }
+
+    private int extractYearFromBatch(StudentBatch batch) {
+        // Extract year from batch.year
+        // Assuming the year is stored as an integer in the Batch class
+        return batch.getYear();
+    }
+
+//    // Additional helper method if needed to check if a room is assigned to a specific year
+//    private boolean isRoomAssignedToYear(Room room, int year) {
+//        // Implementation would depend on how rooms are mapped to years in your system
+//        // This could check lectureRoomIDs or practicalRoomIDs from your CSV data
+//        return room.getBatchYears().contains(year);
+//    }
 
     private Constraint singleCoursePerDayForBatch(ConstraintFactory factory) {
         return factory.forEach(Lesson.class)
@@ -181,18 +222,64 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 .asConstraint("Single course per day for batch");
     }
 
+//    private Constraint labTimeSlotConstraint(ConstraintFactory constraintFactory) {
+//        return constraintFactory.from(Lesson.class)
+//                .filter(lesson -> "LAB".equals(lesson.getLessonType()))
+//                .filter(lesson -> !isLabInCorrectTimeSlot(lesson))
+//                .penalize("Lab classes must be scheduled 14:30–16:30", HardSoftScore.ONE_HARD);
+//    }
+
+//    private boolean isLabInCorrectTimeSlot(Lesson lesson) {
+//        TimeSlot timeSlot = lesson.getTimeSlot();
+//        return timeSlot != null
+//                && timeSlot.getStartTime().equals(LocalTime.of(14, 30))
+//                && timeSlot.getEndTime().equals(LocalTime.of(16, 30));
+//    }
+
     private Constraint labTimeSlotConstraint(ConstraintFactory constraintFactory) {
         return constraintFactory.from(Lesson.class)
                 .filter(lesson -> "LAB".equals(lesson.getLessonType()))
                 .filter(lesson -> !isLabInCorrectTimeSlot(lesson))
-                .penalize("Lab classes must be scheduled 14:30–16:30", HardSoftScore.ONE_HARD);
+                .penalize("Lab classes must be scheduled in designated time slots per batch",
+                        HardSoftScore.ONE_HARD);
     }
 
     private boolean isLabInCorrectTimeSlot(Lesson lesson) {
         TimeSlot timeSlot = lesson.getTimeSlot();
-        return timeSlot != null
-                && timeSlot.getStartTime().equals(LocalTime.of(14, 30))
-                && timeSlot.getEndTime().equals(LocalTime.of(16, 30));
+        if (timeSlot == null) return false;
+
+        int batchYear = extractYearFromBatch(lesson.getStudentBatch());
+        LocalTime startTime = timeSlot.getStartTime();
+        LocalTime endTime = timeSlot.getEndTime();
+
+        // Lab slot 1: 9:00-11:00 (2022 and 2024 batch)
+        boolean isSlot1 = startTime.equals(LocalTime.of(9, 0)) &&
+                endTime.equals(LocalTime.of(11, 0));
+
+        // Lab slot 2: 11:15-13:15 (2024 batch only)
+        boolean isSlot2 = startTime.equals(LocalTime.of(11, 15)) &&
+                endTime.equals(LocalTime.of(13, 15));
+
+        // Lab slot 3: 14:30-16:30 (2023 and 2024 batch)
+        boolean isSlot3 = startTime.equals(LocalTime.of(14, 30)) &&
+                endTime.equals(LocalTime.of(16, 30));
+
+        // Check if the time slot is valid for the specific batch
+        switch (batchYear) {
+            case 2021:
+
+            case 2022:
+                return isSlot1;  // Only 9:00-11:00 allowed
+
+            case 2023:
+                return isSlot3;  // Only 14:30-16:30 allowed
+
+            case 2024:
+                return isSlot2 || isSlot3;  // Two slots allowed
+
+            default:
+                return false;
+        }
     }
 
 
@@ -333,12 +420,12 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 room.getType() == RoomType.HARDWARE_LAB;
     }
 
-    private boolean isLunchHour(Lesson lesson) {
-        LocalTime startTime = lesson.getTimeSlot().getStartTime();
-        LocalTime endTime = lesson.getTimeSlot().getEndTime();
-        return (startTime.isAfter(LUNCH_START) || startTime.equals(LUNCH_START)) &&
-                (endTime.isBefore(LUNCH_END) || endTime.equals(LUNCH_END));
-    }
+//    private boolean isLunchHour(Lesson lesson) {
+//        LocalTime startTime = lesson.getTimeSlot().getStartTime();
+//        LocalTime endTime = lesson.getTimeSlot().getEndTime();
+//        return (startTime.isAfter(LUNCH_START) || startTime.equals(LUNCH_START)) &&
+//                (endTime.isBefore(LUNCH_END) || endTime.equals(LUNCH_END));
+//    }
 
     private boolean isConsecutive(Lesson lesson1, Lesson lesson2) {
         LocalTime endTime1 = lesson1.getTimeSlot().getEndTime();
