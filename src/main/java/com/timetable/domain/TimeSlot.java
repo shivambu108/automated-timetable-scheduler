@@ -10,15 +10,25 @@ public class TimeSlot {
     private String day;
     private LocalTime startTime;
     private LocalTime endTime;
+    // Added new field for slot type
+    private String slotType;
 
     public TimeSlot() {}
 
-    public TimeSlot(Long id, String day, LocalTime startTime, LocalTime endTime) {
+    public TimeSlot(Long id, String day, LocalTime startTime, LocalTime endTime, String slotType) {
         this.id = id;
         this.day = day;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.slotType = slotType;
     }
+
+    // Legacy constructor for backward compatibility
+    public TimeSlot(Long id, String day, LocalTime startTime, LocalTime endTime) {
+        this(id, day, startTime, endTime, "LECTURE"); // Default to lecture type
+    }
+
+
 
     // Getters and Setters
     public Long getId() { return id; }
@@ -30,6 +40,36 @@ public class TimeSlot {
     public LocalTime getEndTime() { return endTime; }
     public void setEndTime(LocalTime endTime) { this.endTime = endTime; }
 
+    // New getter and setter for slot type
+    public String getSlotType() { return slotType; }
+    public void setSlotType(String slotType) { this.slotType = slotType; }
+
+    // Added method to check if slot is for labs
+    public boolean isLabSlot() {
+        return "LAB".equals(slotType) &&
+                startTime.equals(LocalTime.of(14, 30)) &&
+                endTime.equals(LocalTime.of(16, 30));
+    }
+
+    // Added method to check if slot is for lectures
+    public boolean isLectureSlot() {
+        return "LECTURE".equals(slotType) &&
+                (
+                        (startTime.equals(LocalTime.of(9, 0)) && endTime.equals(LocalTime.of(10, 30))) ||
+                                (startTime.equals(LocalTime.of(10, 45)) && endTime.equals(LocalTime.of(12, 15))) ||
+                                (startTime.equals(LocalTime.of(12, 15)) && endTime.equals(LocalTime.of(13, 15))) ||
+                                (startTime.equals(LocalTime.of(14, 30)) && endTime.equals(LocalTime.of(16, 0)))
+                );
+    }
+
+    // Added method to validate time slot
+    public boolean isValidTimeSlot() {
+        if (isLabSlot()) return true;
+        if (isLectureSlot()) return true;
+        return false;
+    }
+
+
     // Overriding equals and hashCode to compare TimeSlots by id
     @Override
     public boolean equals(Object o) {
@@ -40,8 +80,9 @@ public class TimeSlot {
     }
 
     @Override
-    public int hashCode() { return Objects.hash(id); }
-
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 
     public int getTimeSlotIndex() {
         switch (day.toLowerCase()) {
@@ -58,5 +99,14 @@ public class TimeSlot {
             default:
                 throw new IllegalArgumentException("Invalid day: " + day);
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s-%s (%s)",
+                day,
+                startTime.toString(),
+                endTime.toString(),
+                slotType);
     }
 }

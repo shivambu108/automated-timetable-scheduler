@@ -4,67 +4,71 @@ import com.timetable.domain.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.timetable.domain.*;
+import java.util.List;
+import java.util.logging.Logger;
+
 public class DataPrinter {
 
-    public static void printFacultyData(List<Faculty> facultyList) {
-        System.out.printf("%-5s %-20s %-30s %-20s %-30s %-15s%n",
-                "ID", "Name", "Email", "Password", "Subjects", "Max Hours Per Day");
-        System.out.println("---------------------------------------------------------------------------------------");
+    private static final Logger logger = Logger.getLogger(DataPrinter.class.getName());
 
-        for (Faculty faculty : facultyList) {
-            System.out.printf("%-5d %-20s %-30s %-20s %-30s %-15d%n",
-                    faculty.getId(),
-                    faculty.getName(),
-                    faculty.getEmail(),
-                    faculty.getPassword(),
-                    String.join(", ", faculty.getSubjects()),
-                    faculty.getMaxHoursPerDay());
+    // Print all batches
+    public static void printBatches(List<StudentBatch> batches) {
+        if (batches == null || batches.isEmpty()) {
+            logger.info("No batches found.");
+            return;
+        }
+
+        logger.info("Printing all batches:");
+        for (StudentBatch batch : batches) {
+            logger.info("ID: " + batch.getId() + ", Name: " + batch.getBatchName() + ", Year: " + batch.getYear() +
+                    ", Strength: " + batch.getStrength() + ", Courses: " + batch.getCourses() +
+                    ", Lecture Rooms: " + batch.getLectureRoomIDs() + ", Practical Rooms: " + batch.getPracticalRoomIDs());
         }
     }
 
-    public static void printRooms(List<Room> roomList) {
-        System.out.println("=== Room List ===");
-        for (Room room : roomList) {
-            System.out.println("ID: " + room.getId() +
-                    ", Name: " + room.getRoomNumber() +
-                    ", Capacity: " + room.getCapacity() +
+    // Print all courses
+    public static void printCourses(List<Course> courses) {
+        if (courses == null || courses.isEmpty()) {
+            logger.info("No courses found.");
+            return;
+        }
+
+        logger.info("Printing all courses:");
+        for (Course course : courses) {
+            logger.info("ID: " + course.getId() + ", Course Code: " + course.getCourseCode() + ", Name: " + course.getName() +
+                    ", Type: " + course.getCourseType() + ", Batch IDs: " + course.getBatchIds() +
+                    ", Lecture Hours: " + course.getLectureHours() + ", Theory Hours: " + course.getTheoryHours() +
+                    ", Practical Hours: " + course.getPracticalHours() + ", Credits: " + course.getCredits() +
+                    ", Faculty IDs: " + course.getEligibleFaculty());
+        }
+    }
+
+    // Print all faculties
+    public static void printFaculties(List<Faculty> faculties) {
+        if (faculties == null || faculties.isEmpty()) {
+            logger.info("No faculties found.");
+            return;
+        }
+
+        logger.info("Printing all faculties:");
+        for (Faculty faculty : faculties) {
+            logger.info("ID: " + faculty.getId() + ", Name: " + faculty.getName() + ", Email: " + faculty.getEmail() +
+                    ", Subjects: " + faculty.getSubjects() + ", Max Hours Per Day: " + faculty.getMaxHoursPerDay());
+        }
+    }
+
+    // Print all rooms
+    public static void printRooms(List<Room> rooms) {
+        if (rooms == null || rooms.isEmpty()) {
+            logger.info("No rooms found.");
+            return;
+        }
+
+        logger.info("Printing all rooms:");
+        for (Room room : rooms) {
+            logger.info("ID: " + room.getId() + ", Room Number: " + room.getRoomNumber() + ", Capacity: " + room.getCapacity() +
                     ", Type: " + room.getType());
         }
-        System.out.println();
-    }
-
-    public static void printCourses(List<Course> courseList) {
-        System.out.println("=== Course List ===");
-        for (Course course : courseList) {
-            System.out.println("ID: " + course.getId() +
-                    ", Code: " + course.getCourseCode() +
-                    ", Name: " + course.getName() +
-                    ", Type: " + course.getCourseType() +
-                    ", BatchIds: " + course.getBatchIds() +
-                    ", Lecture Hours: " + course.getLectureHours() +
-                    ", Theory Hours: " + course.getTheoryHours() +
-                    ", Practical Hours: " + course.getPracticalHours() +
-                    ", Credits: " + course.getCredits() +
-                    ", Eligible Faculty: " + course.getEligibleFaculty().stream()
-                    .map(Faculty::getName)
-                    .collect(Collectors.joining(", ")));
-        }
-        System.out.println();
-    }
-
-    public static void printStudentBatches(List<StudentBatch> batchList) {
-        System.out.println("=== Student Batch List ===");
-        for (StudentBatch batch : batchList) {
-            System.out.println("ID: " + batch.getId() +
-                    ", Name: " + batch.getBatchName() +
-                    ", Strength: " + batch.getStrength() +
-                    ", Year: " + batch.getYear() +
-                    ", Courses: " + batch.getCourses().stream()
-                    .map(Course::getName)
-                    .collect(Collectors.joining(", ")) +
-                    ", Lecture Room IDs: " + batch.getLectureRoomIDs() +
-                    ", Practical Room IDs: " + batch.getPracticalRoomIDs());
-        }
-        System.out.println();
     }
 }

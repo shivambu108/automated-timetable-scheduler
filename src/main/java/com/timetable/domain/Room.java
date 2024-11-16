@@ -50,4 +50,9 @@ public class Room {
     public boolean isLabRoom() {
         return roomType == RoomType.COMPUTER_LAB || roomType == RoomType.HARDWARE_LAB;
     }
+
+    public Integer getIdealDailyUsage() {
+        if(isLectureRoom()) return 5;
+        else return 2;
+    }
 }

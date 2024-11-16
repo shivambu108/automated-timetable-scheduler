@@ -2,8 +2,8 @@
 id,courseCode,name,courseType,batchId,lecture,theory,practical,credits,hoursPerWeek,eligibleFacultyIds
 #2024
 #
-1,ASD151,Introduction to Design,regular,1;2,0,0,0,2,2,40
-2,MA162,Probability,regular,1;2,0,0,0,2,2,17
+1,ASD151,Introduction to Design,regular,1;2,3,0,0,2,2,40
+2,MA162,Probability,regular,1;2,3,0,0,2,2,17
 3,EC161,Digital Design,regular,1;2,3,0,2,2,5,14
 4,CS161,Problem Solving through Programming,regular,1,3,0,2,4,7,34
 5,CS161,Problem Solving through Programming,regular,2,3,0,2,4,7,33

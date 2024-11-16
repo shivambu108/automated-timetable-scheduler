@@ -1,71 +1,75 @@
 Day,Time,Room,Batch,Course,Faculty
-Monday,09:00-10:00,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Monday,10:00-11:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Monday,11:00-12:00,101,CSE-A,English Language and Communication,Dr. Rajesh
-Monday,15:00-16:00,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Monday,16:00-17:00,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Monday,09:00-10:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Monday,10:00-11:00,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
-Monday,11:00-12:00,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Monday,14:00-15:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Monday,15:00-16:00,103,DSAI,Language and Communication,Dr. Rajesh
-Monday,16:00-17:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Monday,14:00-15:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Monday,15:00-16:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,09:00-10:00,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Tuesday,10:00-11:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,14:00-15:00,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Tuesday,15:00-16:00,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,16:00-17:00,102,CSE-B,English Language and Communication,Dr. Rajesh
-Tuesday,09:00-10:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Tuesday,10:00-11:00,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Tuesday,11:00-12:00,103,DSAI,Language and Communication,Dr. Rajesh
-Tuesday,14:00-15:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Tuesday,15:00-16:00,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
-Tuesday,10:00-11:00,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Tuesday,11:00-12:00,104,ECE,Physics for ECE,Dr. Aswath
-Tuesday,14:00-15:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Tuesday,15:00-16:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Tuesday,16:00-17:00,104,ECE,Calculus,Dr. Anand P B
-Wednesday,09:00-10:00,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Wednesday,10:00-11:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Wednesday,11:00-12:00,101,CSE-A,English Language and Communication,Dr. Rajesh
-Wednesday,14:00-15:00,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Wednesday,15:00-16:00,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Wednesday,14:00-15:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Wednesday,15:00-16:00,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Wednesday,16:00-17:00,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
-Wednesday,09:00-10:00,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Wednesday,10:00-11:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Wednesday,14:00-15:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Wednesday,15:00-16:00,104,ECE,Physics for ECE,Dr. Aswath
-Wednesday,16:00-17:00,104,ECE,Calculus,Dr. Anand P B
-Thursday,15:00-16:00,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Thursday,16:00-17:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Thursday,09:00-10:00,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Thursday,10:00-11:00,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Thursday,11:00-12:00,102,CSE-B,English Language and Communication,Dr. Rajesh
-Thursday,09:00-10:00,103,DSAI,Language and Communication,Dr. Rajesh
-Thursday,10:00-11:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Thursday,11:00-12:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Thursday,09:00-10:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Thursday,10:00-11:00,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Thursday,11:00-12:00,104,ECE,Physics for ECE,Dr. Aswath
-Thursday,15:00-16:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Thursday,16:00-17:00,104,ECE,Calculus,Dr. Anand P B
-Friday,09:00-10:00,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
-Friday,10:00-11:00,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
-Friday,11:00-12:00,101,CSE-A,English Language and Communication,Dr. Rajesh
-Friday,09:00-10:00,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
-Friday,10:00-11:00,102,CSE-B,English Language and Communication,Dr. Rajesh
-Friday,11:00-12:00,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
-Friday,09:00-10:00,103,DSAI,Mathematics for Data Science,Guest Faculty
-Friday,10:00-11:00,103,DSAI,Finance and Accounting,Dr. Anushree Kini
-Friday,14:00-15:00,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
-Friday,15:00-16:00,103,DSAI,Language and Communication,Dr. Rajesh
-Friday,09:00-10:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
-Friday,10:00-11:00,104,ECE,Physics for ECE,Dr. Aswath
-Friday,11:00-12:00,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
-Friday,14:00-15:00,104,ECE,Calculus,Dr. Anand P B
-Friday,15:00-16:00,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
-Friday,16:00-17:00,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Monday,09:00-10:30,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Monday,10:45-12:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Monday,12:15-13:15,101,CSE-A,Probability,Dr. Lakshman
+Monday,09:00-10:30,102,CSE-B,English Language and Communication,Dr. Rajesh
+Monday,10:45-12:15,102,CSE-B,Probability,Dr. Lakshman
+Monday,12:15-13:15,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Monday,14:30-16:30,102,CSE-B,Introduction to Design,Dr. Sandesh
+Monday,09:00-10:30,L108,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Monday,10:45-12:15,103,DSAI,Language and Communication,Dr. Rajesh
+Monday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Monday,14:30-16:00,103,DSAI,Mathematics for Data Science,Guest Faculty
+Monday,09:00-10:30,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Monday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
+Monday,12:15-13:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Monday,14:30-16:00,104,ECE,Calculus,Dr. Anand P B
+Monday,14:30-16:30,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,09:00-10:30,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Tuesday,10:45-12:15,101,CSE-A,English Language and Communication,Dr. Rajesh
+Tuesday,12:15-13:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,14:30-16:30,101,CSE-A,Probability,Dr. Lakshman
+Tuesday,09:00-10:30,102,CSE-B,English Language and Communication,Dr. Rajesh
+Tuesday,10:45-12:15,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,14:30-16:00,102,CSE-B,Introduction to Design,Dr. Sandesh
+Tuesday,09:00-10:30,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Tuesday,10:45-12:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Tuesday,12:15-13:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Tuesday,14:30-16:30,103,DSAI,Mathematics for Data Science,Guest Faculty
+Tuesday,09:00-10:30,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Tuesday,10:45-12:15,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Tuesday,12:15-13:15,H109,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Tuesday,14:30-16:00,104,ECE,Calculus,Dr. Anand P B
+Wednesday,09:00-10:30,101,CSE-A,English Language and Communication,Dr. Rajesh
+Wednesday,10:45-12:15,101,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,12:15-13:15,101,CSE-A,Introduction to Design,Dr. Sandesh
+Wednesday,09:00-10:30,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Wednesday,10:45-12:15,102,CSE-B,English Language and Communication,Dr. Rajesh
+Wednesday,14:30-16:00,102,CSE-B,Introduction to Design,Dr. Sandesh
+Wednesday,14:30-16:30,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,09:00-10:30,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Wednesday,10:45-12:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Wednesday,12:15-13:15,L108,DSAI,Language and Communication,Dr. Rajesh
+Wednesday,09:00-10:30,104,ECE,Physics for ECE,Dr. Aswath
+Wednesday,10:45-12:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Wednesday,12:15-13:15,H109,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Wednesday,14:30-16:30,104,ECE,Calculus,Dr. Anand P B
+Thursday,09:00-10:30,101,CSE-A,English Language and Communication,Dr. Rajesh
+Thursday,10:45-12:15,101,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Thursday,12:15-13:15,101,CSE-A,Introduction to Design,Dr. Sandesh
+Thursday,14:30-16:00,L106,CSE-A,Digital Design,Dr. Jagadeesha R Bhat
+Thursday,09:00-10:30,102,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Thursday,10:45-12:15,102,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Thursday,12:15-13:15,102,CSE-B,Probability,Dr. Lakshman
+Thursday,09:00-10:30,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Thursday,10:45-12:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Thursday,12:15-13:15,103,DSAI,Data Science and AI Applications,Dr. Abdul Wahid
+Thursday,14:30-16:00,103,DSAI,Mathematics for Data Science,Guest Faculty
+Thursday,09:00-10:30,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Thursday,10:45-12:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra
+Thursday,12:15-13:15,104,ECE,Physics for ECE,Dr. Aswath
+Thursday,14:30-16:00,104,ECE,Calculus,Dr. Anand P B
+Thursday,14:30-16:30,104,ECE,Digital Design,Dr. Jagadeesha R Bhat
+Friday,09:00-10:30,101,CSE-A,Probability,Dr. Lakshman
+Friday,10:45-12:15,L106,CSE-A,Problem Solving through Programming,Dr. Sunil Kumar P V
+Friday,12:15-13:15,101,CSE-A,Introduction to Design,Dr. Sandesh
+Friday,09:00-10:30,L107,CSE-B,Problem Solving through Programming,Dr. Sunil C K
+Friday,10:45-12:15,L107,CSE-B,Digital Design,Dr. Jagadeesha R Bhat
+Friday,12:15-13:15,102,CSE-B,Probability,Dr. Lakshman
+Friday,09:00-10:30,103,DSAI,Language and Communication,Dr. Rajesh
+Friday,10:45-12:15,103,DSAI,Finance and Accounting,Dr. Anushree Kini
+Friday,12:15-13:15,103,DSAI,Problem Solving through Programming,Dr. Manjunath KV
+Friday,14:30-16:30,103,DSAI,Mathematics for Data Science,Guest Faculty
+Friday,09:00-10:30,104,ECE,Basic Circuit Theory,Dr. Somen Bhattacharjee
+Friday,10:45-12:15,104,ECE,Physics for ECE,Dr. Aswath
+Friday,12:15-13:15,104,ECE,Programming and Data Structures,Dr. Suvadip Hazra

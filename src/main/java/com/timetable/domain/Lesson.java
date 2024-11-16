@@ -6,15 +6,21 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.logging.Logger;
+
 import com.timetable.util.CSVDataLoader;
 
 
 @PlanningEntity
 public class Lesson {
+
+    private static final Logger logger = Logger.getLogger(Lesson.class.getName());
+
     @PlanningId
     private Long id;
     private Course course;
     private StudentBatch studentBatch;
+    private String lessonType; // Added to track lesson type
 
     @PlanningVariable(valueRangeProviderRefs = "facultyRange")
     private Faculty faculty;
@@ -56,6 +62,14 @@ public class Lesson {
         assignPredefinedRoom();
     }
 
+    public void setLessonType(String lessonType) {
+        this.lessonType = lessonType;
+    }
+
+    public String getLessonType() {
+        return lessonType;
+    }
+
     public Faculty getFaculty() { return faculty; }
     public void setFaculty(Faculty faculty) { this.faculty = faculty; }
 
@@ -73,15 +87,43 @@ public class Lesson {
 
     // Method to assign predefined room based on batch and course type
     // Room Assignment Logic
+    // Modified room assignment logic to handle lecture and practical rooms separately
     public void assignPredefinedRoom() {
-        if (course == null || studentBatch == null || allRooms == null) return;
+        if (course == null || studentBatch == null || allRooms == null) {
+            logger.warning(String.format("Cannot assign room for lesson %d - missing required data", id));
+            return;
+        }
 
-        if (course.isLabCourse() && timeSlot != null) {
-            room = isLabTimeSlot(timeSlot)
-                    ? findRoomById(studentBatch.getPracticalRoomIDs().get(0))
-                    : findRoomById(studentBatch.getLectureRoomIDs().get(0));
+        if ("LAB".equals(lessonType)) {
+            // For lab lessons, assign from practical rooms
+            if (!studentBatch.getPracticalRoomIDs().isEmpty()) {
+                room = findRoomById(studentBatch.getPracticalRoomIDs().get(0));
+                if (room != null) {
+                    logger.info(String.format("Assigned practical room %s to LAB lesson %d for course %s",
+                            room.getRoomNumber(),
+                            id,
+                            course.getCourseCode()));
+                } else {
+                    logger.warning(String.format("Failed to assign practical room to LAB lesson %d for course %s",
+                            id,
+                            course.getCourseCode()));
+                }
+            }
         } else {
-            room = findRoomById(studentBatch.getLectureRoomIDs().get(0));
+            // For lecture lessons, assign from lecture rooms
+            if (!studentBatch.getLectureRoomIDs().isEmpty()) {
+                room = findRoomById(studentBatch.getLectureRoomIDs().get(0));
+                if (room != null) {
+                    logger.info(String.format("Assigned lecture room %s to LECTURE lesson %d for course %s",
+                            room.getRoomNumber(),
+                            id,
+                            course.getCourseCode()));
+                } else {
+                    logger.warning(String.format("Failed to assign lecture room to LECTURE lesson %d for course %s",
+                            id,
+                            course.getCourseCode()));
+                }
+            }
         }
     }
 
@@ -107,10 +149,17 @@ public class Lesson {
         return course != null && course.getEligibleFaculty().contains(faculty);
     }
 
+    // Modified room validation to check room type against lesson type
     public boolean isValidRoom() {
-        if (room == null || course == null) return false;
-        return course.isLabCourse() == room.isLabRoom();
+        if (room == null) return false;
+
+        if ("LAB".equals(lessonType)) {
+            return room.isLabRoom() && studentBatch.getPracticalRoomIDs().contains(room.getId());
+        } else {
+            return room.isLectureRoom() && studentBatch.getLectureRoomIDs().contains(room.getId());
+        }
     }
+
 
     @Override
     public boolean equals(Object o) {

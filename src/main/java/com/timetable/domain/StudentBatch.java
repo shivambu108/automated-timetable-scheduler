@@ -38,4 +38,17 @@ public class StudentBatch {
     public void setLectureRoomIDs(List<Long> lectureRoomIDs) { this.lectureRoomIDs = lectureRoomIDs; }  // New setter
     public List<Long> getPracticalRoomIDs() { return practicalRoomIDs; }  // New getter
     public void setPracticalRoomIDs(List<Long> practicalRoomIDs) { this.practicalRoomIDs = practicalRoomIDs; }  // New setter
+
+    public int getRequiredLabsPerWeek() {
+        if (courses == null || courses.isEmpty()) {
+            return 0; // No courses, so no labs required
+        }
+
+        int totalPracticalHours = courses.stream()
+                .filter(Course::isLabCourse) // Consider only lab courses
+                .mapToInt(Course::getPracticalHours)
+                .sum();
+
+        return totalPracticalHours;
+    }
 }
