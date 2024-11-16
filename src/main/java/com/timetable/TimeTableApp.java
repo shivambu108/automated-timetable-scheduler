@@ -258,8 +258,8 @@ public class TimeTableApp {
         System.out.println("\nSolved Timetable:");
         System.out.println("Score: " + solution.getScore());
         System.out.println("------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-10s | %-15s | %-15s | %-15s | %-50s | %-30s%n",
-                "Day", "Time", "Room", "Batch", "Course", "Faculty");
+        System.out.printf("%-10s | %-13s | %-13s | %-13s | %-50s | %-10s%n | %-30s%n",
+                "Day", "Time", "Room", "Batch", "Course", "Type", "Faculty");
         System.out.println("------------------------------------------------------------------------------------------------------------------------------");
 
 
@@ -268,12 +268,13 @@ public class TimeTableApp {
                 .sorted(Comparator.comparing((Lesson lesson) -> dayToIndex(lesson.getTimeSlot().getDay()))
                         .thenComparing(lesson -> lesson.getStudentBatch().getBatchName())
                         .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
-                .forEach(lesson -> System.out.printf("%-10s | %-15s | %-15s | %-15s | %-50s | %-30s%n",
+                .forEach(lesson -> System.out.printf("%-10s | %-13s | %-13s | %-13s | %-50s| %-10s%n | %-30s%n",
                         lesson.getTimeSlot().getDay(),
                         lesson.getTimeSlot().getStartTime() + "-" + lesson.getTimeSlot().getEndTime(),
                         lesson.getRoom().getRoomNumber(),
                         lesson.getStudentBatch().getBatchName(),
                         lesson.getCourse().getName(),
+                        lesson.getLessonType(),
                         lesson.getFaculty().getName()));
         System.out.println("------------------------------------------------------------");
     }
@@ -281,7 +282,7 @@ public class TimeTableApp {
     // Export solution to a CSV file
     private static void exportSolutionToCSV(TimeTable solution, String fileName) {
         try (FileWriter writer = new FileWriter(fileName)) {
-            writer.write("Day,Time,Room,Batch,Course,Faculty\n");
+            writer.write("Day,Time,Room,Batch,Course,Type,Faculty\n");
 
             solution.getLessonList().stream()
                     .filter(lesson -> lesson.getTimeSlot() != null && lesson.getRoom() != null && lesson.getFaculty() != null)
@@ -290,13 +291,14 @@ public class TimeTableApp {
                             .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
                     .forEach(lesson -> {
                         try {
-                            writer.write(String.format("%s,%s-%s,%s,%s,%s,%s\n",
+                            writer.write(String.format("%s,%s-%s,%s,%s,%s,%s,%s\n",
                                     lesson.getTimeSlot().getDay(),
                                     lesson.getTimeSlot().getStartTime(),
                                     lesson.getTimeSlot().getEndTime(),
                                     lesson.getRoom().getRoomNumber(),
                                     lesson.getStudentBatch().getBatchName(),
                                     lesson.getCourse().getName(),
+                                    lesson.getLessonType(),
                                     lesson.getFaculty().getName()));
                         } catch (IOException e) {
                             logger.log(Level.SEVERE, "Error writing to CSV", e);
