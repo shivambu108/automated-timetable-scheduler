@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f4d1c10-1532-44a6-b8c0-506dd74e9b73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/courses.csv" beforeDir="false" afterPath="$PROJECT_DIR$/courses.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetable/domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetable/domain/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetable/util/CSVDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetable/util/CSVDataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/final_timetable.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_timetable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/final_timetable.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/timetable/TimeTableApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/timetable/TimeTableApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/timetable/TimeTableApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/timetable/TimeTableApp.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,16 +36,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TimeTableApp.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/shiva/Desktop/CODES/CS207/LAB11&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TimeTableApp.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/shiva/Desktop/tt/atts/src/main/resources"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\shiva\Desktop\tt\atts" />

@@ -47,18 +47,18 @@ public class TimeTableApp {
             if (facultyList.isEmpty() || roomList.isEmpty() || courseList.isEmpty() || batchList.isEmpty())
                 throw new RuntimeException("Essential data missing");
 
-            // Create map of rooms by type
-            Map<String, List<Room>> roomsByType = categorizeRoomsByType(roomList);
-            logger.info("Categorized rooms: " +
-                    "Lecture Rooms=" + roomsByType.getOrDefault("LECTURE", Collections.emptyList()).size() +
-                    ", Lab Rooms=" + roomsByType.getOrDefault("LAB", Collections.emptyList()).size());
+//            // Create map of rooms by type
+//            Map<String, List<Room>> roomsByType = categorizeRoomsByType(roomList);
+//            logger.info("Categorized rooms: " +
+//                    "Lecture Rooms=" + roomsByType.getOrDefault("LECTURE", Collections.emptyList()).size() +
+//                    ", Lab Rooms=" + roomsByType.getOrDefault("LAB", Collections.emptyList()).size());
 
 
             List<TimeSlot> timeSlotList = createTimeSlots();
             logger.info("Created " + timeSlotList.size() + " time slots");
 
             // Create initial solution with categorized rooms
-            TimeTable problem = createInitialSolution(facultyList, roomsByType, timeSlotList, batchList, courseList);
+            TimeTable problem = createInitialSolution(facultyList, roomList, timeSlotList, batchList, courseList);
             logger.info("Created initial solution with " + problem.getLessonList().size() + " lessons");
 
             // Configure solver
@@ -66,7 +66,7 @@ public class TimeTableApp {
                     .withSolutionClass(TimeTable.class)
                     .withEntityClasses(Lesson.class)
                     .withConstraintProviderClass(TimeTableConstraintProvider.class)
-                    .withTerminationSpentLimit(Duration.ofMinutes(10));
+                    .withTerminationSpentLimit(Duration.ofMinutes(1));
 
             // Solve timetable
             SolverFactory<TimeTable> solverFactory = SolverFactory.create(solverConfig);
@@ -86,30 +86,32 @@ public class TimeTableApp {
         }
     }
 
-    // Helper method to categorize rooms by type
-    private static Map<String, List<Room>> categorizeRoomsByType(List<Room> roomList) {
-        Map<String, List<Room>> roomsByType = new HashMap<>();
+    // Removed categorizeRoomsByType method and direct room categorization logic
 
-        // Initialize lists for each room type
-        roomsByType.put("LECTURE", new ArrayList<>());
-        roomsByType.put("LAB", new ArrayList<>());
-
-        // Categorize rooms
-        for (Room room : roomList) {
-            if (room.isLectureRoom()) {
-                roomsByType.get("LECTURE").add(room);
-            } else if (room.isLabRoom()) {
-                roomsByType.get("LAB").add(room);
-            }
-        }
-
-        // Log room categorization results
-        logger.info(String.format("Room categorization complete - Lecture Rooms: %d, Lab Rooms: %d",
-                roomsByType.get("LECTURE").size(),
-                roomsByType.get("LAB").size()));
-
-        return roomsByType;
-    }
+//    // Helper method to categorize rooms by type
+//    private static Map<String, List<Room>> categorizeRoomsByType(List<Room> roomList) {
+//        Map<String, List<Room>> roomsByType = new HashMap<>();
+//
+//        // Initialize lists for each room type
+//        roomsByType.put("LECTURE", new ArrayList<>());
+//        roomsByType.put("LAB", new ArrayList<>());
+//
+//        // Categorize rooms
+//        for (Room room : roomList) {
+//            if (room.isLectureRoom()) {
+//                roomsByType.get("LECTURE").add(room);
+//            } else if (room.isLabRoom()) {
+//                roomsByType.get("LAB").add(room);
+//            }
+//        }
+//
+//        // Log room categorization results
+//        logger.info(String.format("Room categorization complete - Lecture Rooms: %d, Lab Rooms: %d",
+//                roomsByType.get("LECTURE").size(),
+//                roomsByType.get("LAB").size()));
+//
+//        return roomsByType;
+//    }
 
 
     // Modified to create specific time slots for lectures and labs
@@ -133,19 +135,23 @@ public class TimeTableApp {
 
     // Create initial solution with course and batch information
     private static TimeTable createInitialSolution(List<Faculty> facultyList,
-                                                   Map<String, List<Room>> roomsByType,
+                                                   List<Room> roomList,
                                                    List<TimeSlot> timeSlotList,
                                                    List<StudentBatch> batchList,
                                                    List<Course> courseList) {
         List<Lesson> lessonList = new ArrayList<>();
         Long lessonId = 1L;
 
-        // Collect all rooms for reference
-        List<Room> allRooms = new ArrayList<>();
-        allRooms.addAll(roomsByType.getOrDefault("LECTURE", new ArrayList<>()));
-        allRooms.addAll(roomsByType.getOrDefault("LAB", new ArrayList<>()));
+//        // Collect all rooms for reference
+//        List<Room> allRooms = new ArrayList<>();
+//        allRooms.addAll(roomsByType.getOrDefault("LECTURE", new ArrayList<>()));
+//        allRooms.addAll(roomsByType.getOrDefault("LAB", new ArrayList<>()));
 
         for (StudentBatch batch : batchList) {
+
+//            Room lectureRoom = findRoomById(allRooms, batch.getLectureRoomIDs().get(0));
+//            Room practicalRoom = !batch.getPracticalRoomIDs().isEmpty() ? findRoomById(allRooms, batch.getPracticalRoomIDs().get(0)) : null;
+
             for (Course course : batch.getCourses()) {
                 if (course.getEligibleFaculty() == null || course.getEligibleFaculty().isEmpty()) {
                     logger.warning("Course " + course.getName() + " has no eligible faculty");
@@ -154,11 +160,11 @@ public class TimeTableApp {
 
                 // Create lecture lessons with predefined lecture rooms
                 for (int i = 0; i < course.getLectureHours(); i++) {
-                    Lesson lesson = new Lesson(lessonId++, course, batch, allRooms);
+                    Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LECTURE");
                     // Assign predefined lecture room from batch's lecture room list
                     if (!batch.getLectureRoomIDs().isEmpty()) {
-                        Room lectureRoom = findRoomById(allRooms, batch.getLectureRoomIDs().get(0));
+                        Room lectureRoom = findRoomById(roomList, batch.getLectureRoomIDs().get(0));
                         if (lectureRoom != null) {
                             lesson.setRoom(lectureRoom);
                             logger.info(String.format("Created LECTURE lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
@@ -180,11 +186,11 @@ public class TimeTableApp {
 
                 // Create theory lessons with predefined lecture rooms
                 for (int i = 0; i < course.getTheoryHours(); i++) {
-                    Lesson lesson = new Lesson(lessonId++, course, batch, allRooms);
+                    Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LECTURE");
                     // Assign predefined lecture room from batch's lecture room list
                     if (!batch.getLectureRoomIDs().isEmpty()) {
-                        Room lectureRoom = findRoomById(allRooms, batch.getLectureRoomIDs().get(0));
+                        Room lectureRoom = findRoomById(roomList, batch.getLectureRoomIDs().get(0));
                         if (lectureRoom != null) {
                             lesson.setRoom(lectureRoom);
                             logger.info(String.format("Created THEORY lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
@@ -206,11 +212,11 @@ public class TimeTableApp {
 
                 // Create lab lessons with predefined practical rooms
                 for (int i = 0; i < course.getPracticalHours(); i=i+2) {
-                    Lesson lesson = new Lesson(lessonId++, course, batch, allRooms);
+                    Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LAB");
                     // Assign predefined practical room from batch's practical room list
                     if (!batch.getPracticalRoomIDs().isEmpty()) {
-                        Room practicalRoom = findRoomById(allRooms, batch.getPracticalRoomIDs().get(0));
+                        Room practicalRoom = findRoomById(roomList, batch.getPracticalRoomIDs().get(0));
                         if (practicalRoom != null) {
                             lesson.setRoom(practicalRoom);
                             logger.info(String.format("Created LAB lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
@@ -243,7 +249,7 @@ public class TimeTableApp {
         // Log final summary
         logger.info(String.format("Initial solution created with %d total lessons", lessonList.size()));
 
-        return new TimeTable(1L, lessonList, facultyList, allRooms, timeSlotList);
+        return new TimeTable(1L, lessonList, facultyList, roomList, timeSlotList);
     }
 
     private static Room findRoomById(List<Room> rooms, Long roomId) {
@@ -258,7 +264,7 @@ public class TimeTableApp {
         System.out.println("\nSolved Timetable:");
         System.out.println("Score: " + solution.getScore());
         System.out.println("------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-10s | %-13s | %-13s | %-13s | %-50s | %-10s%n | %-30s%n",
+        System.out.printf("%-10s | %-13s | %-13s | %-10s | %-40s | %-10s%n | %-30s%n",
                 "Day", "Time", "Room", "Batch", "Course", "Type", "Faculty");
         System.out.println("------------------------------------------------------------------------------------------------------------------------------");
 
@@ -268,7 +274,7 @@ public class TimeTableApp {
                 .sorted(Comparator.comparing((Lesson lesson) -> dayToIndex(lesson.getTimeSlot().getDay()))
                         .thenComparing(lesson -> lesson.getStudentBatch().getBatchName())
                         .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
-                .forEach(lesson -> System.out.printf("%-10s | %-13s | %-13s | %-13s | %-50s| %-10s%n | %-30s%n",
+                .forEach(lesson -> System.out.printf("%-10s | %-13s | %-13s | %-10s | %-40s| %-10s%n | %-30s%n",
                         lesson.getTimeSlot().getDay(),
                         lesson.getTimeSlot().getStartTime() + "-" + lesson.getTimeSlot().getEndTime(),
                         lesson.getRoom().getRoomNumber(),

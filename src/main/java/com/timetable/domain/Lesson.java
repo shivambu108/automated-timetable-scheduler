@@ -31,18 +31,18 @@ public class Lesson {
     @PlanningVariable(valueRangeProviderRefs = "timeSlotRange")
     private TimeSlot timeSlot;
 
-    private List<Room> allRooms;
+    private List<Room> roomList;
     // Removed 'hasLab' as it's not needed anymore; we use Course's isLabCourse method
     // private boolean hasLab; // Lab status based on course
 
     // Constructors
     public Lesson() {}
 
-    public Lesson(Long id, Course course, StudentBatch studentBatch, List<Room> allRooms) {
+    public Lesson(Long id, Course course, StudentBatch studentBatch, List<Room> roomList) {
         this.id = id;
         this.course = course;
         this.studentBatch = studentBatch;
-        this.allRooms = allRooms;
+        this.roomList = roomList;
         assignPredefinedRoom();
     }
 
@@ -74,7 +74,10 @@ public class Lesson {
     public void setFaculty(Faculty faculty) { this.faculty = faculty; }
 
     public Room getRoom() { return room; }
-    public void setRoom(Room room) { this.room = room; }
+    public void setRoom(Room room) {
+        if (this.room == null) {
+            this.room = room;
+    }}
 
     public TimeSlot getTimeSlot() { return timeSlot; }
     public void setTimeSlot(TimeSlot timeSlot) {
@@ -89,43 +92,82 @@ public class Lesson {
     // Room Assignment Logic
     // Modified room assignment logic to handle lecture and practical rooms separately
     public void assignPredefinedRoom() {
-        if (course == null || studentBatch == null || allRooms == null) {
-            logger.warning(String.format("Cannot assign room for lesson %d - missing required data", id));
+        if (studentBatch == null || roomList == null) {
+            logger.warning(String.format("Cannot assign room for lesson %d - student batch or room list is missing", id));
             return;
         }
 
-        if ("LAB".equals(lessonType)) {
-            // For lab lessons, assign from practical rooms
-            if (!studentBatch.getPracticalRoomIDs().isEmpty()) {
-                room = findRoomById(studentBatch.getPracticalRoomIDs().get(0));
-                if (room != null) {
-                    logger.info(String.format("Assigned practical room %s to LAB lesson %d for course %s",
-                            room.getRoomNumber(),
-                            id,
-                            course.getCourseCode()));
-                } else {
-                    logger.warning(String.format("Failed to assign practical room to LAB lesson %d for course %s",
-                            id,
-                            course.getCourseCode()));
-                }
-            }
+        // Ensure the batch is unique by using batchId
+        logger.info(String.format("Assigning room for lesson %d - batch: %s (ID: %d)",
+                id, studentBatch.getBatchName(), studentBatch.getId()));
+
+        // Check lesson type
+        if ("LAB".equalsIgnoreCase(lessonType)) {
+            assignUniqueRoomById(studentBatch.getPracticalRoomIDs(), "LAB");
+        } else if ("LECTURE".equalsIgnoreCase(lessonType)) {
+            assignUniqueRoomById(studentBatch.getLectureRoomIDs(), "LECTURE");
         } else {
-            // For lecture lessons, assign from lecture rooms
-            if (!studentBatch.getLectureRoomIDs().isEmpty()) {
-                room = findRoomById(studentBatch.getLectureRoomIDs().get(0));
+            logger.warning(String.format("Invalid lesson type '%s' for lesson %d", lessonType, id));
+        }
+    }
+
+    private void assignUniqueRoomById(List<Long> practicalRoomIDs, String lab) {
+        // Ensure that the practical room list is not empty
+        if (practicalRoomIDs == null || practicalRoomIDs.isEmpty()) {
+            logger.warning(String.format("No practical rooms available for the %s lab lesson", lab));
+            return;
+        }
+
+        // Check if the room has already been assigned to a batch
+        // This assumes there is a `assignedRooms` set or list to track assigned rooms
+        for (Long roomId : practicalRoomIDs) {
+            if (!assignedRooms.contains(roomId)) {
+                // Assign the first available room that hasn't been assigned yet
+                room = findRoomById(roomId);  // Find room by its ID
                 if (room != null) {
-                    logger.info(String.format("Assigned lecture room %s to LECTURE lesson %d for course %s",
-                            room.getRoomNumber(),
-                            id,
-                            course.getCourseCode()));
+                    // Assign this room to the lab lesson
+                    assignedRooms.add(roomId);  // Mark this room as assigned
+                    logger.info(String.format("Assigned room %d to %s lab lesson", room.getRoomNumber(), lab));
+                    return;  // Stop once the room is successfully assigned
                 } else {
-                    logger.warning(String.format("Failed to assign lecture room to LECTURE lesson %d for course %s",
-                            id,
-                            course.getCourseCode()));
+                    logger.warning(String.format("Room with ID %d not found for %s lab lesson", roomId, lab));
                 }
             }
         }
+
+        // If no room could be assigned, log a warning
+        logger.warning(String.format("Unable to assign a unique practical room for %s lab lesson", lab));
     }
+
+
+
+
+//    // Helper method to assign the first available room from a list of room IDs
+//    private void assignRoomById(List<Long> roomIDs, String lessonType) {
+//        // Check if the list of room IDs is empty
+//        if (roomIDs == null || roomIDs.isEmpty()) {
+//            logger.warning(String.format("No predefined room IDs available for %s lesson %d", lessonType, id));
+//            return;
+//        }
+//
+//        // Find and assign the first valid room from the list
+//        for (Long roomId : roomIDs) {
+//            Room candidateRoom = findRoomById(roomId);
+//            if (candidateRoom != null) {
+//                this.room = candidateRoom;
+//                logger.info(String.format("Assigned room %s to %s lesson %d for batch %s",
+//                        room.getRoomNumber(),
+//                        lessonType,
+//                        id,
+//                        studentBatch.getBatchName()));
+//                return;
+//            }
+//        }
+//
+//        // Log a warning if no matching room is found
+//        logger.warning(String.format("No matching room found for %s lesson %d in the provided room IDs", lessonType, id));
+//    }
+
 
     private boolean isLabTimeSlot(TimeSlot timeSlot) {
         // Example logic: check if timeSlot index matches predefined criteria
@@ -134,8 +176,8 @@ public class Lesson {
 
 
     private Room findRoomById(Long roomId) {
-        if (allRooms == null || roomId == null) return null;
-        return allRooms.stream()
+        if (roomList == null || roomId == null) return null;
+        return roomList.stream()
                 .filter(room -> room.getId().equals(roomId))
                 .findFirst()
                 .orElse(null);

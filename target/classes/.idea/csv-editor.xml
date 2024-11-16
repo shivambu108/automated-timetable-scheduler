@@ -24,7 +24,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\final_timetable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\rooms.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\src\main\resources\final_timetable.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

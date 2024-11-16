@@ -1,0 +1,348 @@
+Day,Time,Room,Batch,Course,Type,Faculty
+Monday,09:00-10:30,101,CSE-A-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Monday,09:00-11:00,101,CSE-A-2021,Bioinformatics,LECTURE,Dr. Sandesh
+Monday,11:15-13:15,101,CSE-A-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Monday,11:45-12:15,101,CSE-A-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Monday,13:30-15:00,101,CSE-A-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Monday,15:00-16:30,101,CSE-A-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Monday,10:45-12:15,101,CSE-A-2022,Cryptography and Information Security,LECTURE,Dr. Rajendra Hegadi
+Monday,11:45-12:15,101,CSE-A-2022,Statistics for Computer Science,LECTURE,Dr. Ramesh Athe
+Monday,13:30-15:00,101,CSE-A-2022,Graph Theory,LECTURE,Dr. Pavan
+Monday,14:30-16:00,101,CSE-A-2022,Computer Networks,LECTURE,Dr. C B Akki
+Monday,15:00-16:30,101,CSE-A-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Monday,10:45-12:15,101,CSE-A-2023,Design & Analysis of Algorithms,LAB,Dr. Vivekraj
+Monday,11:15-13:15,101,CSE-A-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Monday,11:45-12:15,101,CSE-A-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Monday,15:00-16:30,101,CSE-A-2023,Probability,LECTURE,Dr. Anand P B
+Monday,11:15-13:15,101,CSE-A-2024,Problem Solving through Programming,LAB,Dr. Sunil Kumar P V
+Monday,12:15-13:15,101,CSE-A-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Monday,16:30-17:30,101,CSE-A-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Monday,16:30-18:00,101,CSE-A-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Monday,09:00-11:00,102,CSE-B-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Monday,10:45-12:15,102,CSE-B-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Monday,11:45-12:15,102,CSE-B-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Monday,13:30-15:00,102,CSE-B-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Monday,14:30-16:30,102,CSE-B-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Monday,09:00-10:30,102,CSE-B-2022,Advanced Algorithm Design,LECTURE,Dr. Suvadip Hazra
+Monday,11:45-12:15,102,CSE-B-2022,Statistics for Computer Science,LECTURE,Dr. Sunil C K
+Monday,14:30-16:00,102,CSE-B-2022,Computer Networks,LECTURE,Dr. Sadhvi
+Monday,15:00-16:30,102,CSE-B-2022,Parallel Computing,LECTURE,Dr. Pramod
+Monday,09:00-11:00,102,CSE-B-2023,Computer Architecture,LAB,Dr. Prabhu Prasad B M
+Monday,12:15-13:15,102,CSE-B-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Monday,16:00-17:30,102,CSE-B-2023,Discrete Mathematics,LECTURE,Dr. Sadhvi
+Monday,16:30-17:30,102,CSE-B-2023,Object Oriented Programming,LECTURE,Dr. Vivekraj
+Monday,09:00-10:30,102,CSE-B-2024,Problem Solving through Programming,LECTURE,Dr. Sunil C K
+Monday,12:15-13:15,102,CSE-B-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Monday,16:00-17:30,102,CSE-B-2024,Probability,LECTURE,Dr. Lakshman
+Monday,16:30-18:00,102,CSE-B-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Monday,09:00-10:30,103,DSAI-2021,Human-Computer Interaction,LECTURE,Dr. Bharatesh Chakravarthi
+Monday,10:45-12:15,103,DSAI-2021,DevOps,LECTURE,Dr. Shirshendu Layek
+Monday,11:15-13:15,103,DSAI-2021,Advanced Optimization Technique,LECTURE,Dr. Utkarsh Khaire
+Monday,13:30-15:00,103,DSAI-2021,Introduction to Cybersecurity,LECTURE,Dr. Rajendra Hegadi
+Monday,14:30-16:00,103,DSAI-2021,Data Science System,LECTURE,Dr. Animesh Chaturvedi
+Monday,16:30-18:00,103,DSAI-2021,Healthcare Data Analytics,LECTURE,Dr. Girish GN
+Monday,09:00-10:30,103,DSAI-2022,Visualization and App Development,LECTURE,Dr. Siddharth R
+Monday,13:30-15:00,103,DSAI-2022,Graphs and Social Networks,LECTURE,Dr. Utkarsh Khaire
+Monday,14:30-16:00,103,DSAI-2022,Algorithms and Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Monday,16:00-17:30,103,DSAI-2022,Machine Learning,LECTURE,Dr. Sunil Kumar P V
+Monday,16:30-18:00,103,DSAI-2022,Computer Communication Networks,LECTURE,Dr. C B Akki
+Monday,09:00-11:00,103,DSAI-2023,Introduction to Systems Thinking,LECTURE,Dr. Jagadeesha R Bhat
+Monday,09:00-10:30,103,DSAI-2023,Ethics,LECTURE,Guest Faculty
+Monday,10:45-12:15,103,DSAI-2023,Data and Business Analytics,LECTURE,Dr. Abdul Wahid
+Monday,11:45-12:15,103,DSAI-2023,Object Oriented Programming,LECTURE,Dr. Manjunath KV
+Monday,12:15-13:15,103,DSAI-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Monday,16:30-17:30,103,DSAI-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Monday,09:00-10:30,103,DSAI-2024,Problem Solving through Programming,LECTURE,Dr. Manjunath KV
+Monday,09:00-11:00,103,DSAI-2024,Data Science and AI Applications,LECTURE,Dr. Abdul Wahid
+Monday,10:45-12:15,103,DSAI-2024,Language and Communication,LECTURE,Dr. Rajesh
+Monday,11:15-13:15,103,DSAI-2024,Mathematics for Data Science,LECTURE,Guest Faculty
+Monday,11:45-12:15,103,DSAI-2024,Finance and Accounting,LECTURE,Dr. Anushree Kini
+Monday,09:00-11:00,104,ECE-2021,Energy Efficient Neural Networks,LECTURE,Dr. Jagadish D N
+Monday,09:00-10:30,104,ECE-2021,Image Processing and Computer Vision,LECTURE,Dr. Sibasankar Padhy
+Monday,11:15-13:15,104,ECE-2021,Antennas & Radar Systems,LECTURE,Dr. Somen Bhattacharjee
+Monday,14:30-16:00,104,ECE-2021,Generative AI,LECTURE,Dr. Nataraj
+Monday,11:15-13:15,104,ECE-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Monday,13:30-15:00,104,ECE-2022,Digital Signal Processing,LECTURE,Dr. Somen Bhattacharjee
+Monday,15:00-16:30,104,ECE-2022,Introduction to VLSI Design,LECTURE,Dr. Lakshman
+Monday,16:00-17:30,104,ECE-2022,Advanced Digital Communication System,LECTURE,Dr. Chinmayananda
+Monday,11:15-13:15,104,ECE-2023,Professional Communication,LECTURE,Dr. Chandrika Kamath
+Monday,11:45-12:15,104,ECE-2023,Electromagnetic Theory,LECTURE,Dr. Somen Bhattacharjee
+Monday,16:00-17:30,104,ECE-2023,Microprocessors and Micro-controllers,LECTURE,Dr. Nataraj
+Monday,16:30-17:30,104,ECE-2023,Signals and Systems,LECTURE,Dr. Sibasankar Padhy
+Monday,10:45-12:15,104,ECE-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Monday,11:15-13:15,104,ECE-2024,Programming and Data Structures,LAB,Dr. Suvadip Hazra
+Monday,12:15-13:15,104,ECE-2024,Basic Circuit Theory,LECTURE,Dr. Somen Bhattacharjee
+Monday,16:00-17:30,104,ECE-2024,Calculus,LECTURE,Dr. Anand P B
+Monday,16:30-18:00,104,ECE-2024,Physics for ECE,LECTURE,Dr. Aswath
+Tuesday,11:45-12:15,101,CSE-A-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Tuesday,13:30-15:00,101,CSE-A-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Tuesday,14:30-16:30,101,CSE-A-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Tuesday,16:00-17:30,101,CSE-A-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Tuesday,16:30-17:30,101,CSE-A-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Tuesday,09:00-11:00,101,CSE-A-2022,Graph Theory,LECTURE,Dr. Pavan
+Tuesday,11:15-13:15,101,CSE-A-2022,Statistics for Computer Science,LECTURE,Dr. Ramesh Athe
+Tuesday,11:45-12:15,101,CSE-A-2022,Computer Networks,LECTURE,Dr. C B Akki
+Tuesday,16:00-17:30,101,CSE-A-2022,Cryptography and Information Security,LECTURE,Dr. Rajendra Hegadi
+Tuesday,16:30-18:00,101,CSE-A-2022,Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Tuesday,09:00-11:00,101,CSE-A-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Tuesday,09:00-10:30,101,CSE-A-2023,Design & Analysis of Algorithms,LECTURE,Dr. Vivekraj
+Tuesday,10:45-12:15,101,CSE-A-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Tuesday,11:15-13:15,101,CSE-A-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Tuesday,15:00-16:30,101,CSE-A-2023,Object Oriented Programming,LECTURE,Dr. Pramod
+Tuesday,09:00-11:00,101,CSE-A-2024,Probability,LECTURE,Dr. Lakshman
+Tuesday,09:00-10:30,101,CSE-A-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Tuesday,10:45-12:15,101,CSE-A-2024,Problem Solving through Programming,LECTURE,Dr. Sunil Kumar P V
+Tuesday,11:15-13:15,101,CSE-A-2024,Digital Design,LAB,Dr. Jagadeesha R Bhat
+Tuesday,09:00-11:00,102,CSE-B-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Tuesday,11:15-13:15,102,CSE-B-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Tuesday,14:30-16:00,102,CSE-B-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Tuesday,09:00-10:30,102,CSE-B-2022,Advanced Algorithm Design,LECTURE,Dr. Suvadip Hazra
+Tuesday,09:00-11:00,102,CSE-B-2022,Parallel Computing,LECTURE,Dr. Pramod
+Tuesday,14:30-16:30,102,CSE-B-2022,Computer Networks,LECTURE,Dr. Sadhvi
+Tuesday,15:00-16:30,102,CSE-B-2022,Artificial Intelligence,LECTURE,Dr. Girish GN
+Tuesday,09:00-10:30,102,CSE-B-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Tuesday,10:45-12:15,102,CSE-B-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Tuesday,11:15-13:15,102,CSE-B-2023,Probability,LECTURE,Dr. Anand P B
+Tuesday,15:00-16:30,102,CSE-B-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Tuesday,15:00-16:30,102,CSE-B-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Tuesday,16:30-18:00,102,CSE-B-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Tuesday,14:30-16:00,103,DSAI-2021,Introduction to Cybersecurity,LECTURE,Dr. Rajendra Hegadi
+Tuesday,14:30-16:30,103,DSAI-2021,DevOps,LECTURE,Dr. Shirshendu Layek
+Tuesday,15:00-16:30,103,DSAI-2021,Advanced Optimization Technique,LECTURE,Dr. Utkarsh Khaire
+Tuesday,16:00-17:30,103,DSAI-2021,Data Science System,LECTURE,Dr. Animesh Chaturvedi
+Tuesday,09:00-11:00,103,DSAI-2022,Visualization and App Development,LAB,Dr. Siddharth R
+Tuesday,10:45-12:15,103,DSAI-2022,Algorithms and Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Tuesday,11:15-13:15,103,DSAI-2022,Machine Learning,LECTURE,Dr. Sunil Kumar P V
+Tuesday,11:45-12:15,103,DSAI-2022,Graphs and Social Networks,LECTURE,Dr. Utkarsh Khaire
+Tuesday,14:30-16:30,103,DSAI-2022,Computer Communication Networks,LECTURE,Dr. C B Akki
+Tuesday,11:15-13:15,103,DSAI-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Tuesday,11:45-12:15,103,DSAI-2023,Introduction to Systems Thinking,LECTURE,Dr. Jagadeesha R Bhat
+Tuesday,15:00-16:30,103,DSAI-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Tuesday,16:30-18:00,103,DSAI-2023,Data and Business Analytics,LAB,Dr. Abdul Wahid
+Tuesday,10:45-12:15,103,DSAI-2024,Mathematics for Data Science,LECTURE,Guest Faculty
+Tuesday,11:15-13:15,103,DSAI-2024,Problem Solving through Programming,LECTURE,Dr. Manjunath KV
+Tuesday,09:00-11:00,104,ECE-2021,Image Processing and Computer Vision,LECTURE,Dr. Sibasankar Padhy
+Tuesday,10:45-12:15,104,ECE-2021,Energy Efficient Neural Networks,LECTURE,Dr. Jagadish D N
+Tuesday,16:30-18:00,104,ECE-2021,Generative AI,LECTURE,Dr. Nataraj
+Tuesday,09:00-10:30,104,ECE-2022,Advanced Digital Communication System,LECTURE,Dr. Chinmayananda
+Tuesday,13:30-15:00,104,ECE-2022,Introduction to Algorithms,LECTURE,Dr. Deepak
+Tuesday,16:00-17:30,104,ECE-2022,Introduction to VLSI Design,LECTURE,Dr. Jagadish D N
+Tuesday,16:30-17:30,104,ECE-2022,Happiness and Wellbeing,LECTURE,Dr. Chandrika Kamath
+Tuesday,09:00-10:30,104,ECE-2023,Electromagnetic Theory,LECTURE,Dr. Somen Bhattacharjee
+Tuesday,09:00-11:00,104,ECE-2023,Linear Integrated Circuits,LECTURE,Dr. Prakash Pawar
+Tuesday,10:45-12:15,104,ECE-2023,Signals and Systems,LECTURE,Dr. Sibasankar Padhy
+Tuesday,15:00-16:30,104,ECE-2023,Professional Communication,LECTURE,Dr. Chandrika Kamath
+Tuesday,16:00-17:30,104,ECE-2023,Linear Algebra,LECTURE,Dr. Lakshman
+Tuesday,09:00-10:30,104,ECE-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Tuesday,09:00-11:00,104,ECE-2024,Programming and Data Structures,LECTURE,Dr. Suvadip Hazra
+Tuesday,16:00-17:30,104,ECE-2024,Calculus,LECTURE,Dr. Anand P B
+Wednesday,11:15-13:15,101,CSE-A-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Wednesday,13:30-15:00,101,CSE-A-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Wednesday,14:30-16:00,101,CSE-A-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Wednesday,15:00-16:30,101,CSE-A-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Wednesday,16:30-18:00,101,CSE-A-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Wednesday,16:30-17:30,101,CSE-A-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Wednesday,09:00-11:00,101,CSE-A-2022,Computer Networks,LAB,Dr. C B Akki
+Wednesday,10:45-12:15,101,CSE-A-2022,Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Wednesday,11:15-13:15,101,CSE-A-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Wednesday,14:30-16:30,101,CSE-A-2022,Statistics for Computer Science,LECTURE,Dr. Ramesh Athe
+Wednesday,14:30-16:00,101,CSE-A-2022,Graph Theory,LECTURE,Dr. Pavan
+Wednesday,16:00-17:30,101,CSE-A-2022,Cryptography and Information Security,LECTURE,Dr. Rajendra Hegadi
+Wednesday,09:00-11:00,101,CSE-A-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Wednesday,11:15-13:15,101,CSE-A-2023,Probability,LECTURE,Dr. Anand P B
+Wednesday,11:45-12:15,101,CSE-A-2023,Design & Analysis of Algorithms,LECTURE,Dr. Vivekraj
+Wednesday,12:15-13:15,101,CSE-A-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Wednesday,16:30-18:00,101,CSE-A-2023,Object Oriented Programming,LECTURE,Dr. Pramod
+Wednesday,10:45-12:15,101,CSE-A-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Wednesday,11:15-13:15,101,CSE-A-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Wednesday,11:45-12:15,101,CSE-A-2024,Probability,LECTURE,Dr. Lakshman
+Wednesday,09:00-10:30,102,CSE-B-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Wednesday,11:15-13:15,102,CSE-B-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Wednesday,13:30-15:00,102,CSE-B-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Wednesday,14:30-16:00,102,CSE-B-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Wednesday,16:30-18:00,102,CSE-B-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Wednesday,13:30-15:00,102,CSE-B-2022,Artificial Intelligence,LECTURE,Dr. Girish GN
+Wednesday,15:00-16:30,102,CSE-B-2022,Statistics for Computer Science,LECTURE,Dr. Sunil C K
+Wednesday,16:30-17:30,102,CSE-B-2022,Computer Networks,LECTURE,Dr. Sadhvi
+Wednesday,11:15-13:15,102,CSE-B-2023,Object Oriented Programming,LAB,Dr. Vivekraj
+Wednesday,11:45-12:15,102,CSE-B-2023,Probability,LECTURE,Dr. Anand P B
+Wednesday,12:15-13:15,102,CSE-B-2023,Discrete Mathematics,LECTURE,Dr. Sadhvi
+Wednesday,14:30-16:30,102,CSE-B-2023,Design & Analysis of Algorithms,LAB,Dr. Dibyajyoti Guha
+Wednesday,09:00-11:00,102,CSE-B-2024,Problem Solving through Programming,LECTURE,Dr. Sunil C K
+Wednesday,09:00-10:30,102,CSE-B-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Wednesday,11:15-13:15,102,CSE-B-2024,Digital Design,LAB,Dr. Jagadeesha R Bhat
+Wednesday,12:15-13:15,102,CSE-B-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Wednesday,09:00-11:00,103,DSAI-2021,Human-Computer Interaction,LECTURE,Dr. Bharatesh Chakravarthi
+Wednesday,11:15-13:15,103,DSAI-2021,Healthcare Data Analytics,LECTURE,Dr. Girish GN
+Wednesday,16:30-18:00,103,DSAI-2021,Data Science System,LECTURE,Dr. Animesh Chaturvedi
+Wednesday,09:00-10:30,103,DSAI-2022,Algorithms and Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Wednesday,11:45-12:15,103,DSAI-2022,Computer Communication Networks,LECTURE,Dr. C B Akki
+Wednesday,16:30-18:00,103,DSAI-2022,Visualization and App Development,LECTURE,Dr. Siddharth R
+Wednesday,09:00-11:00,103,DSAI-2023,Design & Analysis of Algorithms,LAB,Dr. Dibyajyoti Guha
+Wednesday,11:15-13:15,103,DSAI-2023,Object Oriented Programming,LAB,Dr. Manjunath KV
+Wednesday,11:45-12:15,103,DSAI-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Wednesday,12:15-13:15,103,DSAI-2023,Introduction to Systems Thinking,LECTURE,Dr. Jagadeesha R Bhat
+Wednesday,16:00-17:30,103,DSAI-2023,Data and Business Analytics,LECTURE,Dr. Abdul Wahid
+Wednesday,09:00-11:00,103,DSAI-2024,Data Science and AI Applications,LECTURE,Dr. Abdul Wahid
+Wednesday,10:45-12:15,103,DSAI-2024,Finance and Accounting,LECTURE,Dr. Anushree Kini
+Wednesday,11:15-13:15,103,DSAI-2024,Language and Communication,LAB,Dr. Rajesh
+Wednesday,11:45-12:15,103,DSAI-2024,Problem Solving through Programming,LECTURE,Dr. Manjunath KV
+Wednesday,12:15-13:15,103,DSAI-2024,Mathematics for Data Science,LECTURE,Guest Faculty
+Wednesday,09:00-11:00,104,ECE-2021,Antennas & Radar Systems,LECTURE,Dr. Somen Bhattacharjee
+Wednesday,14:30-16:00,104,ECE-2021,Energy Efficient Neural Networks,LECTURE,Dr. Jagadish D N
+Wednesday,09:00-10:30,104,ECE-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Wednesday,10:45-12:15,104,ECE-2022,Digital Signal Processing,LECTURE,Dr. Somen Bhattacharjee
+Wednesday,11:15-13:15,104,ECE-2022,Advanced Digital Communication System,LECTURE,Dr. Chinmayananda
+Wednesday,14:30-16:30,104,ECE-2022,Happiness and Wellbeing,LECTURE,Dr. Chandrika Kamath
+Wednesday,14:30-16:00,104,ECE-2022,Introduction to Algorithms,LECTURE,Dr. Deepak
+Wednesday,16:00-17:30,104,ECE-2022,Introduction to VLSI Design,LECTURE,Dr. Jagadish D N
+Wednesday,09:00-10:30,104,ECE-2023,Professional Communication,LECTURE,Dr. Chandrika Kamath
+Wednesday,11:15-13:15,104,ECE-2023,Microprocessors and Micro-controllers,LECTURE,Dr. Nataraj
+Wednesday,12:15-13:15,104,ECE-2023,Linear Algebra,LECTURE,Dr. Lakshman
+Wednesday,16:00-17:30,104,ECE-2023,Linear Integrated Circuits,LAB,Dr. Prakash Pawar
+Wednesday,16:30-18:00,104,ECE-2023,Electromagnetic Theory,LECTURE,Dr. Somen Bhattacharjee
+Wednesday,09:00-11:00,104,ECE-2024,Calculus,LECTURE,Dr. Anand P B
+Wednesday,11:15-13:15,104,ECE-2024,Basic Circuit Theory,LECTURE,Dr. Somen Bhattacharjee
+Wednesday,15:00-16:30,104,ECE-2024,Physics for ECE,LECTURE,Dr. Aswath
+Wednesday,16:30-17:30,104,ECE-2024,Programming and Data Structures,LECTURE,Dr. Suvadip Hazra
+Thursday,09:00-11:00,101,CSE-A-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Thursday,10:45-12:15,101,CSE-A-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Thursday,11:15-13:15,101,CSE-A-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Thursday,15:00-16:30,101,CSE-A-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Thursday,10:45-12:15,101,CSE-A-2022,Statistics for Computer Science,LECTURE,Dr. Ramesh Athe
+Thursday,11:15-13:15,101,CSE-A-2022,Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Thursday,11:45-12:15,101,CSE-A-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Thursday,14:30-16:00,101,CSE-A-2022,Computer Networks,LECTURE,Dr. C B Akki
+Thursday,09:00-10:30,101,CSE-A-2023,Probability,LECTURE,Dr. Anand P B
+Thursday,11:15-13:15,101,CSE-A-2023,Design & Analysis of Algorithms,LECTURE,Dr. Vivekraj
+Thursday,11:45-12:15,101,CSE-A-2023,Computer Architecture,LAB,Dr. Prabhu Prasad B M
+Thursday,15:00-16:30,101,CSE-A-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Thursday,16:00-17:30,101,CSE-A-2023,Object Oriented Programming,LECTURE,Dr. Pramod
+Thursday,11:15-13:15,101,CSE-A-2024,Problem Solving through Programming,LECTURE,Dr. Sunil Kumar P V
+Thursday,11:45-12:15,101,CSE-A-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Thursday,12:15-13:15,101,CSE-A-2024,Introduction to Design,LECTURE,Dr. Sandesh
+Thursday,09:00-11:00,102,CSE-B-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Thursday,10:45-12:15,102,CSE-B-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Thursday,14:30-16:30,102,CSE-B-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Thursday,15:00-16:30,102,CSE-B-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Thursday,16:00-17:30,102,CSE-B-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Thursday,11:45-12:15,102,CSE-B-2022,Computer Networks,LECTURE,Dr. Sadhvi
+Thursday,14:30-16:30,102,CSE-B-2022,Parallel Computing,LECTURE,Dr. Pramod
+Thursday,15:00-16:30,102,CSE-B-2022,Advanced Algorithm Design,LECTURE,Dr. Suvadip Hazra
+Thursday,16:00-17:30,102,CSE-B-2022,Artificial Intelligence,LECTURE,Dr. Girish GN
+Thursday,16:30-18:00,102,CSE-B-2022,Statistics for Computer Science,LECTURE,Dr. Sunil C K
+Thursday,09:00-10:30,102,CSE-B-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Thursday,09:00-11:00,102,CSE-B-2023,Probability,LECTURE,Dr. Anand P B
+Thursday,10:45-12:15,102,CSE-B-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Thursday,12:15-13:15,102,CSE-B-2023,Discrete Mathematics,LECTURE,Dr. Sadhvi
+Thursday,15:00-16:30,102,CSE-B-2023,Object Oriented Programming,LECTURE,Dr. Vivekraj
+Thursday,16:30-18:00,102,CSE-B-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Thursday,11:15-13:15,102,CSE-B-2024,Problem Solving through Programming,LAB,Dr. Sunil C K
+Thursday,11:45-12:15,102,CSE-B-2024,Probability,LECTURE,Dr. Lakshman
+Thursday,16:30-17:30,102,CSE-B-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Thursday,09:00-11:00,103,DSAI-2021,Healthcare Data Analytics,LECTURE,Dr. Girish GN
+Thursday,10:45-12:15,103,DSAI-2021,Introduction to Cybersecurity,LECTURE,Dr. Rajendra Hegadi
+Thursday,11:15-13:15,103,DSAI-2021,Advanced Optimization Technique,LECTURE,Dr. Utkarsh Khaire
+Thursday,14:30-16:30,103,DSAI-2021,Data Science System,LECTURE,Dr. Animesh Chaturvedi
+Thursday,14:30-16:00,103,DSAI-2021,DevOps,LECTURE,Dr. Shirshendu Layek
+Thursday,16:00-17:30,103,DSAI-2021,Human-Computer Interaction,LECTURE,Dr. Bharatesh Chakravarthi
+Thursday,09:00-11:00,103,DSAI-2022,Computer Communication Networks,LAB,Dr. C B Akki
+Thursday,15:00-16:30,103,DSAI-2022,Graphs and Social Networks,LECTURE,Dr. Utkarsh Khaire
+Thursday,16:30-18:00,103,DSAI-2022,Machine Learning,LECTURE,Dr. Sunil Kumar P V
+Thursday,09:00-11:00,103,DSAI-2023,Introduction to Systems Thinking,LECTURE,Dr. Jagadeesha R Bhat
+Thursday,10:45-12:15,103,DSAI-2023,Ethics,LECTURE,Guest Faculty
+Thursday,11:45-12:15,103,DSAI-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Thursday,16:00-17:30,103,DSAI-2023,Object Oriented Programming,LECTURE,Dr. Manjunath KV
+Thursday,16:30-17:30,103,DSAI-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Thursday,11:15-13:15,103,DSAI-2024,Problem Solving through Programming,LAB,Dr. Manjunath KV
+Thursday,11:45-12:15,103,DSAI-2024,Finance and Accounting,LECTURE,Dr. Anushree Kini
+Thursday,12:15-13:15,103,DSAI-2024,Data Science and AI Applications,LECTURE,Dr. Abdul Wahid
+Thursday,16:30-18:00,103,DSAI-2024,Mathematics for Data Science,LECTURE,Guest Faculty
+Thursday,09:00-10:30,104,ECE-2021,Image Processing and Computer Vision,LECTURE,Dr. Sibasankar Padhy
+Thursday,16:00-17:30,104,ECE-2021,Antennas & Radar Systems,LECTURE,Dr. Somen Bhattacharjee
+Thursday,16:30-17:30,104,ECE-2021,Generative AI,LECTURE,Dr. Nataraj
+Thursday,09:00-10:30,104,ECE-2022,Happiness and Wellbeing,LECTURE,Dr. Chandrika Kamath
+Thursday,09:00-11:00,104,ECE-2022,Introduction to Algorithms,LECTURE,Dr. Deepak
+Thursday,11:15-13:15,104,ECE-2022,Digital Signal Processing,LECTURE,Dr. Somen Bhattacharjee
+Thursday,11:45-12:15,104,ECE-2022,Advanced Digital Communication System,LECTURE,Dr. Chinmayananda
+Thursday,13:30-15:00,104,ECE-2022,Introduction to VLSI Design,LECTURE,Dr. Jagadish D N
+Thursday,14:30-16:00,104,ECE-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Thursday,09:00-10:30,104,ECE-2023,Linear Algebra,LECTURE,Dr. Lakshman
+Thursday,09:00-11:00,104,ECE-2023,Linear Integrated Circuits,LECTURE,Dr. Prakash Pawar
+Thursday,10:45-12:15,104,ECE-2023,Signals and Systems,LECTURE,Dr. Sibasankar Padhy
+Thursday,11:45-12:15,104,ECE-2023,Microprocessors and Micro-controllers,LAB,Dr. Nataraj
+Thursday,09:00-10:30,104,ECE-2024,Physics for ECE,LECTURE,Dr. Aswath
+Thursday,09:00-11:00,104,ECE-2024,Basic Circuit Theory,LECTURE,Dr. Somen Bhattacharjee
+Thursday,11:15-13:15,104,ECE-2024,Programming and Data Structures,LECTURE,Dr. Suvadip Hazra
+Thursday,15:00-16:30,104,ECE-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Friday,09:00-10:30,101,CSE-A-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Friday,11:45-12:15,101,CSE-A-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Friday,14:30-16:00,101,CSE-A-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Friday,09:00-11:00,101,CSE-A-2022,Computer Networks,LECTURE,Dr. C B Akki
+Friday,09:00-10:30,101,CSE-A-2022,Cryptography and Information Security,LECTURE,Dr. Rajendra Hegadi
+Friday,11:15-13:15,101,CSE-A-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Friday,13:30-15:00,101,CSE-A-2022,Graph Theory,LECTURE,Dr. Pavan
+Friday,14:30-16:30,101,CSE-A-2022,Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Friday,09:00-11:00,101,CSE-A-2023,Probability,LECTURE,Dr. Anand P B
+Friday,10:45-12:15,101,CSE-A-2023,Object Oriented Programming,LAB,Dr. Pramod
+Friday,11:15-13:15,101,CSE-A-2023,Design & Analysis of Algorithms,LECTURE,Dr. Vivekraj
+Friday,11:45-12:15,101,CSE-A-2023,Discrete Mathematics,LECTURE,Dr. Animesh Roy
+Friday,12:15-13:15,101,CSE-A-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Friday,09:00-10:30,101,CSE-A-2024,Problem Solving through Programming,LECTURE,Dr. Sunil Kumar P V
+Friday,10:45-12:15,101,CSE-A-2024,Probability,LECTURE,Dr. Lakshman
+Friday,16:00-17:30,101,CSE-A-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Friday,09:00-11:00,102,CSE-B-2021,Information Retrieval,LECTURE,Dr. Krishendu Ghosh
+Friday,10:45-12:15,102,CSE-B-2021,Deep Computer Vision,LECTURE,Dr. Dibyajyoti Guha
+Friday,11:15-13:15,102,CSE-B-2021,AI for Cybersecurity,LECTURE,Dr. Abdul Wahid
+Friday,14:30-16:30,102,CSE-B-2021,Virtualization and Cloud Computing,LECTURE,Dr. Malay
+Friday,15:00-16:30,102,CSE-B-2021,Bioinformatics,LECTURE,Dr. Sunil Kumar P V
+Friday,16:00-17:30,102,CSE-B-2021,Computer Graphics,LECTURE,Dr. Vivekraj
+Friday,09:00-11:00,102,CSE-B-2022,Computer Networks,LAB,Dr. Sadhvi
+Friday,10:45-12:15,102,CSE-B-2022,Advanced Algorithm Design,LECTURE,Dr. Suvadip Hazra
+Friday,11:15-13:15,102,CSE-B-2022,Statistics for Computer Science,LECTURE,Dr. Sunil C K
+Friday,11:45-12:15,102,CSE-B-2022,Parallel Computing,LECTURE,Dr. Pramod
+Friday,13:30-15:00,102,CSE-B-2022,Artificial Intelligence,LECTURE,Dr. Girish GN
+Friday,09:00-10:30,102,CSE-B-2023,Probability,LECTURE,Dr. Anand P B
+Friday,09:00-11:00,102,CSE-B-2023,Industrial Social Psychology,LECTURE,Dr. Navyashree
+Friday,11:15-13:15,102,CSE-B-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Friday,11:45-12:15,102,CSE-B-2023,Discrete Mathematics,LECTURE,Dr. Sadhvi
+Friday,12:15-13:15,102,CSE-B-2023,Computer Architecture,LECTURE,Dr. Prabhu Prasad B M
+Friday,15:00-16:30,102,CSE-B-2023,Object Oriented Programming,LECTURE,Dr. Vivekraj
+Friday,09:00-11:00,102,CSE-B-2024,Probability,LECTURE,Dr. Lakshman
+Friday,11:45-12:15,102,CSE-B-2024,English Language and Communication,LECTURE,Dr. Rajesh
+Friday,16:00-17:30,102,CSE-B-2024,Digital Design,LECTURE,Dr. Jagadeesha R Bhat
+Friday,16:30-17:30,102,CSE-B-2024,Problem Solving through Programming,LECTURE,Dr. Sunil C K
+Friday,09:00-10:30,103,DSAI-2021,Advanced Optimization Technique,LECTURE,Dr. Utkarsh Khaire
+Friday,11:15-13:15,103,DSAI-2021,Human-Computer Interaction,LECTURE,Dr. Bharatesh Chakravarthi
+Friday,11:45-12:15,103,DSAI-2021,DevOps,LECTURE,Dr. Shirshendu Layek
+Friday,14:30-16:30,103,DSAI-2021,Introduction to Cybersecurity,LECTURE,Dr. Rajendra Hegadi
+Friday,16:30-18:00,103,DSAI-2021,Healthcare Data Analytics,LECTURE,Dr. Girish GN
+Friday,09:00-10:30,103,DSAI-2022,Computer Communication Networks,LECTURE,Dr. C B Akki
+Friday,09:00-11:00,103,DSAI-2022,Machine Learning,LAB,Dr. Sunil Kumar P V
+Friday,10:45-12:15,103,DSAI-2022,Algorithms and Artificial Intelligence,LECTURE,Dr. Krishendu Ghosh
+Friday,11:15-13:15,103,DSAI-2022,Graphs and Social Networks,LECTURE,Dr. Utkarsh Khaire
+Friday,16:00-17:30,103,DSAI-2022,Visualization and App Development,LECTURE,Dr. Siddharth R
+Friday,09:00-11:00,103,DSAI-2023,Design & Analysis of Algorithms,LECTURE,Dr. Dibyajyoti Guha
+Friday,10:45-12:15,103,DSAI-2023,Ethics,LECTURE,Guest Faculty
+Friday,11:45-12:15,103,DSAI-2023,Data and Business Analytics,LECTURE,Dr. Abdul Wahid
+Friday,16:30-18:00,103,DSAI-2023,Object Oriented Programming,LECTURE,Dr. Manjunath KV
+Friday,11:15-13:15,103,DSAI-2024,Language and Communication,LECTURE,Dr. Rajesh
+Friday,11:45-12:15,103,DSAI-2024,Finance and Accounting,LECTURE,Dr. Anushree Kini
+Friday,16:00-17:30,103,DSAI-2024,Problem Solving through Programming,LECTURE,Dr. Manjunath KV
+Friday,09:00-11:00,104,ECE-2021,Image Processing and Computer Vision,LECTURE,Dr. Sibasankar Padhy
+Friday,10:45-12:15,104,ECE-2021,Energy Efficient Neural Networks,LECTURE,Dr. Jagadish D N
+Friday,11:15-13:15,104,ECE-2021,Antennas & Radar Systems,LECTURE,Dr. Somen Bhattacharjee
+Friday,11:45-12:15,104,ECE-2021,Generative AI,LECTURE,Dr. Nataraj
+Friday,09:00-11:00,104,ECE-2022,Digital Signal Processing,LAB,Dr. Somen Bhattacharjee
+Friday,13:30-15:00,104,ECE-2022,Introduction to Algorithms,LECTURE,Dr. Deepak
+Friday,14:30-16:00,104,ECE-2022,Internet of Things,LECTURE,Dr. Prakash Pawar
+Friday,09:00-10:30,104,ECE-2023,Microprocessors and Micro-controllers,LECTURE,Dr. Nataraj
+Friday,10:45-12:15,104,ECE-2023,Signals and Systems,LECTURE,Dr. Sibasankar Padhy
+Friday,15:00-16:30,104,ECE-2023,Linear Integrated Circuits,LECTURE,Dr. Prakash Pawar
+Friday,16:30-18:00,104,ECE-2023,Linear Algebra,LECTURE,Dr. Lakshman
+Friday,16:30-17:30,104,ECE-2023,Electromagnetic Theory,LECTURE,Dr. Somen Bhattacharjee
+Friday,10:45-12:15,104,ECE-2024,Basic Circuit Theory,LECTURE,Dr. Somen Bhattacharjee
+Friday,11:15-13:15,104,ECE-2024,Digital Design,LAB,Dr. Jagadeesha R Bhat
+Friday,11:45-12:15,104,ECE-2024,Physics for ECE,LECTURE,Dr. Aswath
+Friday,15:00-16:30,104,ECE-2024,Programming and Data Structures,LECTURE,Dr. Suvadip Hazra
+Friday,16:00-17:30,104,ECE-2024,Calculus,LECTURE,Dr. Anand P B

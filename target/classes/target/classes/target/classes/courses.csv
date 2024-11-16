@@ -1,0 +1,98 @@
+# courses.csv
+id,courseCode,name,courseType,batchId,lecture,theory,practical,credits,hoursPerWeek,eligibleFacultyIds
+#2024
+#
+1,ASD151,Introduction to Design,regular,1;2,3,0,0,2,2,40
+2,MA162,Probability,regular,1;2,3,0,0,2,2,17
+3,EC161,Digital Design,regular,1;2,3,0,2,2,5,14
+4,CS161,Problem Solving through Programming,regular,1,3,0,2,4,7,34
+5,CS161,Problem Solving through Programming,regular,2,3,0,2,4,7,33
+6,HS161,English Language and Communication,regular,1,3,0,0,3,3,26
+7,HS161,English Language and Communication,regular,2,3,0,0,3,3,26
+#
+8,DS101,Mathematics for Data Science,regular,3,3,1,0,4,4,37
+9,DS102,Finance and Accounting,regular,3,3,1,0,4,4,5
+10,CS105,Problem Solving through Programming,regular,3,3,1,2,5,6,19
+11,DS104,Data Science and AI Applications,regular,3,3,0,0,4,4,1
+12,HS103,Language and Communication,regular,3,2,0,2,3,4,26
+#
+13,MA101,Calculus,regular,4,3,1,0,4,4,4
+14,EC102,Digital Design,regular,4,3,0,2,4,5,14
+15,CS103,Programming and Data Structures,regular,4,3,1,2,5,6,32
+16,PH104,Physics for ECE,regular,4,3,1,0,4,4,6
+17,EG102,Basic Circuit Theory,regular,4,3,1,0,4,4,31
+#
+#2023
+18,CS201,Discrete Mathematics,regular,5,3,1,0,4,4,3
+19,CS201,Discrete Mathematics,regular,6,3,1,0,4,4,35
+20,CS207,Object Oriented Programming,regular,5,3,0,2,4,7,39
+21,CS207,Object Oriented Programming,regular,6,3,0,2,4,7,38
+22,CS208,Computer Architecture,regular,5,3,0,2,4,7,23
+23,CS208,Computer Architecture,regular,6,3,0,2,4,7,23
+24,CS202,Design & Analysis of Algorithms,regular,5,3,1,2,5,8,38
+25,CS202,Design & Analysis of Algorithms,regular,6,3,1,2,5,8,12
+26,MA201,Probability,regular,5,3,1,0,4,4,4
+27,MA201,Probability,regular,6,3,1,0,4,4,4
+28,HS204,Industrial Social Psychology,regular,5,3,0,0,3,3,21
+29,HS204,Industrial Social Psychology,regular,6,3,0,0,3,3,21
+#
+30,DS201,Data and Business Analytics,regular,7,3,0,2,4,5,1
+31,CS201,Discrete Mathematics,regular,7,3,1,0,4,4,3
+32,CS207,Object Oriented Programming,regular,7,3,0,2,4,5,19
+33,CS202,Design & Analysis of Algorithms,regular,7,3,1,2,5,6,12
+34,EC209,Introduction to Systems Thinking,regular,7,3,1,0,4,4,14
+35,HS205,Ethics,regular,7,3,0,0,3,3,37
+#
+36,MA202,Linear Algebra,regular,8,3,1,0,4,4,17
+37,EC207,Electromagnetic Theory,regular,8,3,1,0,4,4,31
+38,EC206,Linear Integrated Circuits,regular,8,3,0,2,4,5,24
+39,EC201,Signals and Systems,regular,8,3,1,0,4,4,30
+40,EC202,Microprocessors and Micro-controllers,regular,8,3,0,2,4,5,20
+41,HS102,Professional Communication,regular,8,2,1,0,3,3,9
+#
+#2022
+42,CS309,Statistics for Computer Science,regular,9,3,1,0,4,4,27
+43,CS309,Statistics for Computer Science,regular,10,3,1,0,4,4,33
+44,CS303,Computer Networks,regular,9,3,1,2,5,8,8
+45,CS303,Computer Networks,regular,10,3,1,2,5,8,35
+46,CS304,Artificial Intelligence,regular,9,3,1,0,4,4,16
+47,CS304,Artificial Intelligence,regular,10,3,1,0,4,4,13
+48,CS205,Graph Theory,elective,9,4,0,0,4,4,22
+49,CS366,Advanced Algorithm Design,elective,10,4,0,0,4,4,32
+50,CS352,Cryptography and Information Security,elective,9,4,0,0,4,4,25
+51,CS463,Parallel Computing,elective,10,4,0,0,4,4,39
+52,EC355,Internet of Things,elective,9,4,0,0,4,4,24
+53,HS101,Environmental Studies,regular,9;10,0,0,0,2,2,6
+#
+54,DS301,Graphs and Social Networks,regular,11,3,1,0,4,4,36
+55,DS302,Computer Communication Networks,regular,11,3,1,2,5,6,8
+56,DS303,Algorithms and Artificial Intelligence,regular,11,3,1,0,4,4,16
+57,CS307,Machine Learning,regular,11,3,0,2,4,5,34
+58,DS304,Visualization and App Development,regular,11,2,1,2,4,5,29
+#
+59,EC306,Digital Signal Processing,regular,12,3,0,2,4,5,31
+60,EC301,Introduction to VLSI Design,regular,12,3,1,0,4,4,15
+61,HS304,Happiness and Wellbeing,regular,12,3,0,0,3,3,9
+62,CS367,Introduction to Algorithms,elective,12,3,1,0,4,4,11
+63,EC406,Advanced Digital Communication System,elective,12,3,1,0,4,4,10
+64,CS471,Internet of Things,elective,12,3,1,0,4,4,24
+#
+#2021
+65,CS468,Information Retrieval,elective,13;14,4,0,0,4,4,16
+66,CS469,Virtualization and Cloud Computing,elective,13;14,4,0,0,4,4,18
+67,CS470,AI for Cybersecurity,elective,13;14,4,0,0,4,4,1
+68,CS471,Deep Computer Vision,elective,13;14,4,0,0,4,4,12
+69,CS462,Computer Graphics,elective,13;14,4,0,0,4,4,38
+70,CS472,Bioinformatics,elective,13;14,4,0,0,4,4,34
+#
+71,DS401,Healthcare Data Analytics,regular,15,3,1,0,4,4,13
+72,DS401,Introduction to Cybersecurity,regular,15,3,1,0,4,4,25
+73,DS401,Advanced Optimization Technique,regular,15,3,1,0,4,4,36
+74,DS401,Data Science System,regular,15,3,1,0,4,4,2
+75,DS401,DevOps,elective,15,3,1,0,4,4,28
+76,DS401,Human-Computer Interaction,elective,15,3,1,0,4,4,7
+#
+77,EC462,Generative AI,regular,16,3,1,0,4,4,20
+78,EC463,Energy Efficient Neural Networks,regular,16,3,1,0,4,4,15
+79,CS367,Image Processing and Computer Vision,regular,16,3,1,0,4,4,30
+80,EC464,Antennas & Radar Systems,regular,16,3,1,0,4,4,31

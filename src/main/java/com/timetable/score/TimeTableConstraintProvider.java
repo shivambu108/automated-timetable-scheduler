@@ -47,6 +47,7 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 onlyOneLabPerBatchPerDay(factory),
                 onlyLabCoursesInLabRooms(factory),
                 lectureInRegularRooms(factory),
+                predefinedRoomAssignment(factory),
 
                 // Time-related Hard Constraints
                 noClassesDuringLunchHour(factory),
@@ -159,6 +160,24 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 .filter(lesson -> isLabRoom(lesson.getRoom()))
                 .penalize(HardSoftScore.ONE_HARD)
                 .asConstraint("Lecture in regular rooms");
+    }
+
+    private Constraint predefinedRoomAssignment(ConstraintFactory factory) {
+        return factory.forEach(Lesson.class)
+                .filter(lesson -> !isRoomAllowedForBatch(lesson.getRoom(), lesson.getStudentBatch()))
+                .penalize( HardSoftScore.ONE_HARD)
+                .asConstraint("Predefined room assignment");
+    }
+
+    private boolean isRoomAllowedForBatch(Room room, StudentBatch batch) {
+        if (room == null || batch == null) return false;
+
+        if (room.isLectureRoom()) {
+            return batch.getLectureRoomIDs().contains(room.getId());
+        } else if (room.isLabRoom()) {
+            return batch.getPracticalRoomIDs().contains(room.getId());
+        }
+        return false;
     }
 
     // Time-related Hard Constraints
