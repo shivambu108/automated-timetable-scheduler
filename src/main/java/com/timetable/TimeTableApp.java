@@ -60,7 +60,7 @@ public class TimeTableApp {
                     .withSolutionClass(TimeTable.class)
                     .withEntityClasses(Lesson.class)
                     .withConstraintProviderClass(TimeTableConstraintProvider.class)
-                    .withTerminationSpentLimit(Duration.ofMinutes(10));
+                    .withTerminationSpentLimit(Duration.ofMinutes(1));
 
             // Solve timetable
             SolverFactory<TimeTable> solverFactory = SolverFactory.create(solverConfig);
@@ -226,28 +226,41 @@ public class TimeTableApp {
 
     // Print solution timetable
     private static void printSolution(TimeTable solution) {
-        System.out.println("\nSolved Timetable:");
+        // Header
+        System.out.println("\nTimetable Schedule");
         System.out.println("Score: " + solution.getScore());
-        System.out.println("------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-10s | %-13s | %-13s | %-10s | %-40s | %-10s%n | %-30s%n",
-                "Day", "Time", "Room", "Batch", "Course", "Type", "Faculty");
-        System.out.println("------------------------------------------------------------------------------------------------------------------------------");
 
+        // Create format string for consistent column widths
+        String headerFormat = "| %-8s | %-12s | %-8s | %-10s | %-35s | %-8s | %-25s |%n";
+        String lineFormat  = "+----------+--------------+----------+------------+-------------------------------------+----------+---------------------------+%n";
 
+        // Print table header
+        System.out.format(lineFormat);
+        System.out.format(headerFormat, "Day", "Time", "Room", "Batch", "Course", "Type", "Faculty");
+        System.out.format(lineFormat);
+
+        // Sort and print lessons
         solution.getLessonList().stream()
-                .filter(lesson -> lesson.getTimeSlot() != null && lesson.getRoom() != null && lesson.getFaculty() != null)
+                .filter(lesson -> lesson.getTimeSlot() != null &&
+                        lesson.getRoom() != null &&
+                        lesson.getFaculty() != null)
                 .sorted(Comparator.comparing((Lesson lesson) -> dayToIndex(lesson.getTimeSlot().getDay()))
                         .thenComparing(lesson -> lesson.getStudentBatch().getBatchName())
                         .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
-                .forEach(lesson -> System.out.printf("%-10s | %-13s | %-13s | %-10s | %-40s| %-10s%n | %-30s%n",
-                        lesson.getTimeSlot().getDay(),
-                        lesson.getTimeSlot().getStartTime() + "-" + lesson.getTimeSlot().getEndTime(),
-                        lesson.getRoom().getRoomNumber(),
-                        lesson.getStudentBatch().getBatchName(),
-                        lesson.getCourse().getName(),
-                        lesson.getLessonType(),
-                        lesson.getFaculty().getName()));
-        System.out.println("------------------------------------------------------------");
+                .forEach(lesson -> {
+                    System.out.format(headerFormat,
+                            lesson.getTimeSlot().getDay(),
+                            lesson.getTimeSlot().getStartTime() + "-" + lesson.getTimeSlot().getEndTime(),
+                            lesson.getRoom().getRoomNumber(),
+                            lesson.getStudentBatch().getBatchName(),
+                            lesson.getCourse().getName(),
+                            lesson.getLessonType(),
+                            lesson.getFaculty().getName()
+                    );
+                });
+
+        // Print bottom border
+        System.out.format(lineFormat);
     }
 
     // Export solution to a CSV file
