@@ -1,6 +1,7 @@
 // StudentBatch class representing a batch of students with additional room information
 package com.timetable.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentBatch {
@@ -18,9 +19,10 @@ public class StudentBatch {
         this.batchName = batchName;
         this.year = year;
         this.strength = strength;
-        this.courses = courses;
-        this.lectureRoomIDs = lectureRoomIDs;
-        this.practicalRoomIDs = practicalRoomIDs;
+        this.courses = courses != null ? courses : new ArrayList<>();
+        this.lectureRoomIDs = lectureRoomIDs != null ? lectureRoomIDs : new ArrayList<>();
+        this.practicalRoomIDs = practicalRoomIDs != null ? practicalRoomIDs : new ArrayList<>();
+
     }
 
     // Getters and Setters

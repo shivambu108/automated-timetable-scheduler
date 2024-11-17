@@ -22,7 +22,7 @@ public class TimeTableApp {
     private static final Object[][] TIME_SLOT_DEFINITIONS = {
             {LocalTime.of(9, 0), LocalTime.of(10, 30), "LECTURE"},
             {LocalTime.of(10, 45), LocalTime.of(12, 15), "LECTURE"},
-            {LocalTime.of(11, 45), LocalTime.of(12, 15), "LECTURE"},
+            {LocalTime.of(11, 45), LocalTime.of(12, 45), "LECTURE"},
             {LocalTime.of(12, 15), LocalTime.of(13, 15), "LECTURE"},
             {LocalTime.of(13, 30), LocalTime.of(15, 0), "LECTURE"},
             {LocalTime.of(14, 30), LocalTime.of(16, 0), "LECTURE"},
@@ -46,12 +46,6 @@ public class TimeTableApp {
 
             if (facultyList.isEmpty() || roomList.isEmpty() || courseList.isEmpty() || batchList.isEmpty())
                 throw new RuntimeException("Essential data missing");
-
-//            // Create map of rooms by type
-//            Map<String, List<Room>> roomsByType = categorizeRoomsByType(roomList);
-//            logger.info("Categorized rooms: " +
-//                    "Lecture Rooms=" + roomsByType.getOrDefault("LECTURE", Collections.emptyList()).size() +
-//                    ", Lab Rooms=" + roomsByType.getOrDefault("LAB", Collections.emptyList()).size());
 
 
             List<TimeSlot> timeSlotList = createTimeSlots();
@@ -86,33 +80,6 @@ public class TimeTableApp {
         }
     }
 
-    // Removed categorizeRoomsByType method and direct room categorization logic
-
-//    // Helper method to categorize rooms by type
-//    private static Map<String, List<Room>> categorizeRoomsByType(List<Room> roomList) {
-//        Map<String, List<Room>> roomsByType = new HashMap<>();
-//
-//        // Initialize lists for each room type
-//        roomsByType.put("LECTURE", new ArrayList<>());
-//        roomsByType.put("LAB", new ArrayList<>());
-//
-//        // Categorize rooms
-//        for (Room room : roomList) {
-//            if (room.isLectureRoom()) {
-//                roomsByType.get("LECTURE").add(room);
-//            } else if (room.isLabRoom()) {
-//                roomsByType.get("LAB").add(room);
-//            }
-//        }
-//
-//        // Log room categorization results
-//        logger.info(String.format("Room categorization complete - Lecture Rooms: %d, Lab Rooms: %d",
-//                roomsByType.get("LECTURE").size(),
-//                roomsByType.get("LAB").size()));
-//
-//        return roomsByType;
-//    }
-
 
     // Modified to create specific time slots for lectures and labs
     private static List<TimeSlot> createTimeSlots() {
@@ -142,15 +109,37 @@ public class TimeTableApp {
         List<Lesson> lessonList = new ArrayList<>();
         Long lessonId = 1L;
 
-//        // Collect all rooms for reference
-//        List<Room> allRooms = new ArrayList<>();
-//        allRooms.addAll(roomsByType.getOrDefault("LECTURE", new ArrayList<>()));
-//        allRooms.addAll(roomsByType.getOrDefault("LAB", new ArrayList<>()));
+        // Sort batches by ID to ensure lessons are created in batch ID order
+        batchList.sort(Comparator.comparingLong(StudentBatch::getId));
 
         for (StudentBatch batch : batchList) {
+            if (batch.getLectureRoomIDs() == null || batch.getLectureRoomIDs().isEmpty()) {
+                logger.severe(String.format("Batch %s has no lecture rooms assigned", batch.getBatchName()));
+                continue;
+            }
 
-//            Room lectureRoom = findRoomById(allRooms, batch.getLectureRoomIDs().get(0));
-//            Room practicalRoom = !batch.getPracticalRoomIDs().isEmpty() ? findRoomById(allRooms, batch.getPracticalRoomIDs().get(0)) : null;
+            List<Room> batchLectureRooms = new ArrayList<>();
+            List<Room> batchPracticalRooms = new ArrayList<>();
+
+            // Load lecture rooms for this batch
+            for (Long roomId : batch.getLectureRoomIDs()) {
+                Room room = getRoomById(roomId, roomList);
+                if (room != null) {
+                    batchLectureRooms.add(room);
+                } else {
+                    logger.warning(String.format("Lecture room ID %d not found for batch %s", roomId, batch.getBatchName()));
+                }
+            }
+
+            // Load practical rooms for this batch
+            for (Long roomId : batch.getPracticalRoomIDs()) {
+                Room room = getRoomById(roomId, roomList);
+                if (room != null) {
+                    batchPracticalRooms.add(room);
+                } else {
+                    logger.warning(String.format("Practical room ID %d not found for batch %s", roomId, batch.getBatchName()));
+                }
+            }
 
             for (Course course : batch.getCourses()) {
                 if (course.getEligibleFaculty() == null || course.getEligibleFaculty().isEmpty()) {
@@ -158,106 +147,82 @@ public class TimeTableApp {
                     continue;
                 }
 
-                // Create lecture lessons with predefined lecture rooms
+                // Create lecture lessons
                 for (int i = 0; i < course.getLectureHours(); i++) {
                     Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LECTURE");
-                    // Assign predefined lecture room from batch's lecture room list
-                    if (!batch.getLectureRoomIDs().isEmpty()) {
-                        Room lectureRoom = findRoomById(roomList, batch.getLectureRoomIDs().get(0));
-                        if (lectureRoom != null) {
-                            lesson.setRoom(lectureRoom);
-                            logger.info(String.format("Created LECTURE lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
-                                    course.getCourseCode(),
-                                    batch.getBatchName(),
-                                    lectureRoom.getRoomNumber(),
-                                    lesson.getId()));
-                        } else {
-                            logger.warning(String.format("No lecture room found for batch %s, course %s",
-                                    batch.getBatchName(),
-                                    course.getCourseCode()));
-                        }
+
+                    if (!batchLectureRooms.isEmpty()) {
+                        Room lectureRoom = batchLectureRooms.get(i % batchLectureRooms.size());
+                        lesson.setRoom(lectureRoom);
+                        logger.info(String.format("Created LECTURE lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
+                                course.getCourseCode(),
+                                batch.getBatchName(),
+                                lectureRoom.getRoomNumber(),
+                                lesson.getId()));
                     } else {
-                        logger.warning(String.format("No predefined lecture rooms for batch %s",
-                                batch.getBatchName()));
+                        logger.warning(String.format("No lecture rooms available for batch %s", batch.getBatchName()));
                     }
                     lessonList.add(lesson);
                 }
 
-                // Create theory lessons with predefined lecture rooms
+                // Create theory lessons
                 for (int i = 0; i < course.getTheoryHours(); i++) {
                     Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LECTURE");
-                    // Assign predefined lecture room from batch's lecture room list
-                    if (!batch.getLectureRoomIDs().isEmpty()) {
-                        Room lectureRoom = findRoomById(roomList, batch.getLectureRoomIDs().get(0));
-                        if (lectureRoom != null) {
-                            lesson.setRoom(lectureRoom);
-                            logger.info(String.format("Created THEORY lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
-                                    course.getCourseCode(),
-                                    batch.getBatchName(),
-                                    lectureRoom.getRoomNumber(),
-                                    lesson.getId()));
-                        } else {
-                            logger.warning(String.format("No theory room found for batch %s, course %s",
-                                    batch.getBatchName(),
-                                    course.getCourseCode()));
-                        }
+
+                    if (!batchLectureRooms.isEmpty()) {
+                        Room lectureRoom = batchLectureRooms.get(i % batchLectureRooms.size());
+                        lesson.setRoom(lectureRoom);
+                        logger.info(String.format("Created THEORY lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
+                                course.getCourseCode(),
+                                batch.getBatchName(),
+                                lectureRoom.getRoomNumber(),
+                                lesson.getId()));
                     } else {
-                        logger.warning(String.format("No predefined theory rooms for batch %s",
-                                batch.getBatchName()));
+                        logger.warning(String.format("No theory rooms available for batch %s", batch.getBatchName()));
                     }
                     lessonList.add(lesson);
                 }
 
-                // Create lab lessons with predefined practical rooms
-                for (int i = 0; i < course.getPracticalHours(); i=i+2) {
+                // Create lab lessons
+                for (int i = 0; i < course.getPracticalHours(); i += 2) {
                     Lesson lesson = new Lesson(lessonId++, course, batch, roomList);
                     lesson.setLessonType("LAB");
-                    // Assign predefined practical room from batch's practical room list
-                    if (!batch.getPracticalRoomIDs().isEmpty()) {
-                        Room practicalRoom = findRoomById(roomList, batch.getPracticalRoomIDs().get(0));
-                        if (practicalRoom != null) {
-                            lesson.setRoom(practicalRoom);
-                            logger.info(String.format("Created LAB lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
-                                    course.getCourseCode(),
-                                    batch.getBatchName(),
-                                    practicalRoom.getRoomNumber(),
-                                    lesson.getId()));
-                        } else {
-                            logger.warning(String.format("No practical room found for batch %s, course %s",
-                                    batch.getBatchName(),
-                                    course.getCourseCode()));
-                        }
+
+                    if (!batchPracticalRooms.isEmpty()) {
+                        Room practicalRoom = batchPracticalRooms.get(i % batchPracticalRooms.size());
+                        lesson.setRoom(practicalRoom);
+                        logger.info(String.format("Created LAB lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
+                                course.getCourseCode(),
+                                batch.getBatchName(),
+                                practicalRoom.getRoomNumber(),
+                                lesson.getId()));
                     } else {
-                        logger.warning(String.format("No predefined practical rooms for batch %s",
-                                batch.getBatchName()));
+                        logger.warning(String.format("No practical rooms available for batch %s", batch.getBatchName()));
                     }
                     lessonList.add(lesson);
                 }
-
-                // Log total lessons created for this course
-                logger.info(String.format("Total lessons created for Course %s, Batch %s: Lectures=%d, Theory=%d, Labs=%d",
-                        course.getCourseCode(),
-                        batch.getBatchName(),
-                        course.getLectureHours(),
-                        course.getTheoryHours(),            //changed here
-                        course.getPracticalHours()));
             }
         }
 
-        // Log final summary
         logger.info(String.format("Initial solution created with %d total lessons", lessonList.size()));
-
         return new TimeTable(1L, lessonList, facultyList, roomList, timeSlotList);
     }
 
-    private static Room findRoomById(List<Room> rooms, Long roomId) {
-        return rooms.stream()
-                .filter(room -> room.getId().equals(roomId))
-                .findFirst()
-                .orElse(null);
+
+    public static Room getRoomById(Long roomId, List<Room> roomList) {
+        if (roomId == null || roomList == null) {
+            return null;
+        }
+        for (Room room : roomList) {
+            if (room.getId().equals(roomId)) {
+                return room;
+            }
+        }
+        return null; // Return null if no matching room is found
     }
+
 
     // Print solution timetable
     private static void printSolution(TimeTable solution) {
