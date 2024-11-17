@@ -60,7 +60,7 @@ public class TimeTableApp {
                     .withSolutionClass(TimeTable.class)
                     .withEntityClasses(Lesson.class)
                     .withConstraintProviderClass(TimeTableConstraintProvider.class)
-                    .withTerminationSpentLimit(Duration.ofMinutes(1));
+                    .withTerminationSpentLimit(Duration.ofMinutes(10));
 
             // Solve timetable
             SolverFactory<TimeTable> solverFactory = SolverFactory.create(solverConfig);
