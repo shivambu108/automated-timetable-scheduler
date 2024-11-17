@@ -2,41 +2,44 @@ package com.timetable.domain;
 
 import java.util.List;
 
+/**
+ * Represents a course with details such as type, hours, eligible faculty, and associated batches.
+ */
 public class Course {
     private Long id;
     private String courseCode;
     private String name;
-    private String courseType; // "regular" or "elective"
-    private List<Integer> batchIds; // Replaced `branch` and `section` with `batchIds`
+    private String courseType; // Regular or elective
+    private List<Integer> batchIds; // Batch identifiers
     private int lectureHours;
     private int theoryHours;
-    private int practicalHours; // Previously `hasLab`; now hours for practicals
+    private int practicalHours; // Hours for practical sessions
     private int credits;
-    private int hoursPerWeek;
-    private List<Faculty> eligibleFaculty;
+    private int hoursPerWeek; // Calculated from lecture, theory, and practical hours
+    private List<Faculty> eligibleFaculty; // Faculty eligible to teach the course
 
-
+    // Constructor to initialize course details
     public Course(Long id, String courseCode, String name, String courseType, List<Integer> batchIds,
                   int lectureHours, int theoryHours, int practicalHours, int credits, List<Faculty> eligibleFaculty) {
         this.id = id;
         this.courseCode = courseCode;
         this.name = name;
         this.courseType = courseType;
-        this.batchIds = batchIds; // Updated to use batchIds
+        this.batchIds = batchIds;
         this.lectureHours = lectureHours;
         this.theoryHours = theoryHours;
         this.practicalHours = practicalHours;
         this.credits = credits;
-        this.hoursPerWeek = calculateTotalHours();
+        this.hoursPerWeek = calculateTotalHours(); // Calculate total weekly hours
         this.eligibleFaculty = eligibleFaculty;
     }
 
-    // Method to calculate total weekly hours
+    // Calculates total weekly hours
     private int calculateTotalHours() {
         return lectureHours + theoryHours + practicalHours;
     }
 
-    // Getters and Setters for each field
+    // Getters and Setters for all fields
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -49,8 +52,8 @@ public class Course {
     public String getCourseType() { return courseType; }
     public void setCourseType(String courseType) { this.courseType = courseType; }
 
-    public List<Integer> getBatchIds() { return batchIds; } // Updated getter
-    public void setBatchIds(List<Integer> batchIds) { this.batchIds = batchIds; } // Updated setter
+    public List<Integer> getBatchIds() { return batchIds; }
+    public void setBatchIds(List<Integer> batchIds) { this.batchIds = batchIds; }
 
     public int getLectureHours() { return lectureHours; }
     public void setLectureHours(int lectureHours) {
@@ -78,6 +81,11 @@ public class Course {
     public List<Faculty> getEligibleFaculty() { return eligibleFaculty; }
     public void setEligibleFaculty(List<Faculty> eligibleFaculty) { this.eligibleFaculty = eligibleFaculty; }
 
+    // Checks if the course involves practical sessions
+    public boolean isLabCourse() {
+        return this.practicalHours > 0;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
@@ -85,7 +93,7 @@ public class Course {
                 ", courseCode='" + courseCode + '\'' +
                 ", name='" + name + '\'' +
                 ", courseType='" + courseType + '\'' +
-                ", batchIds=" + batchIds +  // Updated to display batchIds
+                ", batchIds=" + batchIds +
                 ", lectureHours=" + lectureHours +
                 ", theoryHours=" + theoryHours +
                 ", practicalHours=" + practicalHours +
@@ -95,7 +103,4 @@ public class Course {
                 '}';
     }
 
-    public boolean isLabCourse() {
-        return this.practicalHours > 0;
-    }
 }

@@ -59,18 +59,6 @@ public class TimeTable {
     public HardSoftScore getScore() { return score; }
     public void setScore(HardSoftScore score) { this.score = score; }
 
-    /**
-     * Validates if all lessons are assigned to appropriate rooms based on their type.
-     * Lab lessons must be assigned to practical rooms, and lecture lessons must be assigned to regular rooms.
-     */
-    public boolean validateRoomAssignments() {
-        for (Lesson lesson : lessonList) {
-            if (!lesson.isValidRoom()) {
-                return false; // Return false if any lesson is in an invalid room
-            }
-        }
-        return true;
-    }
 
     // Overriding equals and hashCode to compare TimeTables by id
     @Override

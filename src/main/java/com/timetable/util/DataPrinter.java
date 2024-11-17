@@ -8,6 +8,7 @@ import com.timetable.domain.*;
 import java.util.List;
 import java.util.logging.Logger;
 
+// just to test if data is being loaded properly or not
 public class DataPrinter {
 
     private static final Logger logger = Logger.getLogger(DataPrinter.class.getName());

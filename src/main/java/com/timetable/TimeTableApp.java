@@ -18,7 +18,7 @@ import java.util.logging.Level;
 public class TimeTableApp {
     private static final Logger logger = Logger.getLogger(TimeTableApp.class.getName());
 
-    // Define the fixed time slots for lectures and labs
+    // Defining the fixed time slots for lectures and labs
     private static final Object[][] TIME_SLOT_DEFINITIONS = {
             {LocalTime.of(9, 0), LocalTime.of(10, 30), "LECTURE"},
             {LocalTime.of(10, 45), LocalTime.of(12, 15), "LECTURE"},
@@ -109,7 +109,7 @@ public class TimeTableApp {
         List<Lesson> lessonList = new ArrayList<>();
         Long lessonId = 1L;
 
-        // Sort batches by ID to ensure lessons are created in batch ID order
+        // Sorting batches by ID to ensure lessons are created in batch ID order
         batchList.sort(Comparator.comparingLong(StudentBatch::getId));
 
         for (StudentBatch batch : batchList) {
@@ -294,7 +294,7 @@ public class TimeTableApp {
         }
     }
 
-    // Map weekdays to indices for sorting
+    // Mapping weekdays to indices for sorting
     private static int dayToIndex(String day) {
         switch (day) {
             case "Monday": return 1;

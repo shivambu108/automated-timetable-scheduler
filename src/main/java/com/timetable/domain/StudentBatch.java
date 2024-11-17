@@ -10,10 +10,10 @@ public class StudentBatch {
     private int year;
     private int strength;
     private List<Course> courses;
-    private List<Long> lectureRoomIDs;     // New field for lecture room IDs
-    private List<Long> practicalRoomIDs;   // New field for practical (lab) room IDs
+    private List<Long> lectureRoomIDs;     // field for lecture room IDs
+    private List<Long> practicalRoomIDs;   // field for practical (lab) room IDs
 
-    // Constructor updated to include lectureRoomIDs and practicalRoomIDs
+    // Constructor
     public StudentBatch(Long id, String batchName, int year, int strength, List<Course> courses, List<Long> lectureRoomIDs, List<Long> practicalRoomIDs) {
         this.id = id;
         this.batchName = batchName;
