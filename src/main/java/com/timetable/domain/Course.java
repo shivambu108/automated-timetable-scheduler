@@ -17,6 +17,9 @@ public class Course {
     private int credits;
     private int hoursPerWeek; // Calculated from lecture, theory, and practical hours
     private List<Faculty> eligibleFaculty; // Faculty eligible to teach the course
+    private List<Long> lectureRoomIDs; // Specific to minors
+
+    private boolean isMinor;
 
     // Constructor to initialize course details
     public Course(Long id, String courseCode, String name, String courseType, List<Integer> batchIds,
@@ -33,6 +36,23 @@ public class Course {
         this.hoursPerWeek = calculateTotalHours(); // Calculate total weekly hours
         this.eligibleFaculty = eligibleFaculty;
     }
+
+    public Course(Long id, String courseCode, String name, String courseType, List<Integer> batchIds,
+                  int lectureHours, int theoryHours, int practicalHours, int credits,
+                  List<Faculty> eligibleFaculty, List<Long> lectureRoomIDs) {
+        this.id = id;
+        this.courseCode = courseCode;
+        this.name = name;
+        this.courseType = courseType;
+        this.batchIds = batchIds;
+        this.lectureHours = lectureHours;
+        this.theoryHours = theoryHours;
+        this.practicalHours = practicalHours;
+        this.credits = credits;
+        this.eligibleFaculty = eligibleFaculty;
+        this.lectureRoomIDs = lectureRoomIDs; // New field for minors
+    }
+
 
     // Calculates total weekly hours
     private int calculateTotalHours() {
@@ -86,6 +106,21 @@ public class Course {
         return this.practicalHours > 0;
     }
 
+    public boolean isMinor() {
+        return isMinor;
+    }
+
+    public void setMinor(boolean minor) {
+        isMinor = minor;
+    }
+
+    public List<Long> getLectureRoomIDs() {
+        return lectureRoomIDs;
+    }
+
+    public void setLectureRoomIDs(List<Long> lectureRoomIDs) {
+        this.lectureRoomIDs = lectureRoomIDs;
+    }
     @Override
     public String toString() {
         return "Course{" +

@@ -149,6 +149,58 @@ public class CSVDataLoader {
         return courseList;
     }
 
+    public static List<Course> loadMinors(String csvFile, List<Faculty> facultyList) {
+        List<Course> minorCourses = new ArrayList<>();
+        String csvContent = removeComments(csvFile);
+
+        try (CSVReader reader = new CSVReader(new StringReader(csvContent))) {
+            List<String[]> rows = reader.readAll();
+            if (rows.size() <= 1) {
+                logger.warning("No minor data found in CSV file");
+                return minorCourses;
+            }
+            for (int i = 1; i < rows.size(); i++) {
+                String[] row = rows.get(i);
+                if (row.length < 12) {
+                    logger.warning("Invalid row at line " + i + ": insufficient columns");
+                    continue;
+                }
+                try {
+                    List<Faculty> eligibleFaculty = new ArrayList<>();
+                    for (String facultyId : row[10].trim().split(";")) {
+                        facultyList.stream()
+                                .filter(f -> f.getId().equals(Long.parseLong(facultyId.trim())))
+                                .findFirst()
+                                .ifPresent(eligibleFaculty::add);
+                    }
+
+                    List<Long> lectureRoomIDs = parseRoomIDs(row[11]);
+
+                    Course minor = new Course(
+                            Long.parseLong(row[0].trim()),               // id
+                            row[1].trim(),                               // courseCode
+                            row[2].trim(),                               // name
+                            row[3].trim(),                               // courseType
+                            List.of(-1),                             // batchId (-1 for ALL)
+                            Integer.parseInt(row[5].trim()),             // lecture hours
+                            Integer.parseInt(row[6].trim()),             // theory hours
+                            Integer.parseInt(row[7].trim()),             // practical hours
+                            Integer.parseInt(row[8].trim()),             // credits
+                            eligibleFaculty,                             // eligible faculty list
+                            lectureRoomIDs                               // lectureRoomIDs
+                    );
+
+                    minorCourses.add(minor);
+                } catch (Exception e) {
+                    logger.log(Level.WARNING, "Error processing minor row " + i, e);
+                }
+            }
+        } catch (Exception e) {
+            logger.log(Level.SEVERE, "Error loading minor data", e);
+        }
+        return minorCourses;
+    }
+
     public static List<StudentBatch> loadStudentBatches(String csvFile, List<Course> courseList) {
         List<StudentBatch> batchList = new ArrayList<>();
         String csvContent = removeComments(csvFile);

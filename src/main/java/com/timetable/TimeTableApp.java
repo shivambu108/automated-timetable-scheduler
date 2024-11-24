@@ -15,6 +15,7 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
+
 public class TimeTableApp {
     private static final Logger logger = Logger.getLogger(TimeTableApp.class.getName());
 
@@ -32,7 +33,14 @@ public class TimeTableApp {
             {LocalTime.of(16, 30), LocalTime.of(18, 0), "LECTURE"},
             {LocalTime.of(9, 0), LocalTime.of(11, 0), "LAB"},
             {LocalTime.of(11, 15), LocalTime.of(13, 15), "LAB"},
-            {LocalTime.of(14, 30), LocalTime.of(16, 30), "LAB"}
+            {LocalTime.of(14, 30), LocalTime.of(16, 30), "LAB"},
+
+    };
+
+    // Defining the fixed time slots for lectures and labs
+    private static final Object[][] MINOR_TIME_SLOT_DEFINITIONS = {
+            {LocalTime.of(8, 0), LocalTime.of(9, 0), "MINOR"},
+            {LocalTime.of(18, 0), LocalTime.of(19, 30), "MINOR"} // evening slot for minor courses
     };
 
 
@@ -42,18 +50,20 @@ public class TimeTableApp {
             List<Faculty> facultyList = CSVDataLoader.loadFaculty("faculty.csv");
             List<Room> roomList = CSVDataLoader.loadRooms("rooms.csv");
             List<Course> courseList = CSVDataLoader.loadCourses("courses.csv", facultyList);
+            List<Course> minorCourseList = CSVDataLoader.loadMinors("minor.csv", facultyList);
             List<StudentBatch> batchList = CSVDataLoader.loadStudentBatches("batches.csv", courseList);
 
-            if (facultyList.isEmpty() || roomList.isEmpty() || courseList.isEmpty() || batchList.isEmpty())
+            if (facultyList.isEmpty() || roomList.isEmpty() || courseList.isEmpty()|| minorCourseList.isEmpty() || batchList.isEmpty())
                 throw new RuntimeException("Essential data missing");
 
 
             List<TimeSlot> timeSlotList = createTimeSlots();
+            List<TimeSlot> minorTimeSlotList = createMinorTimeSlots();
             logger.info("Created " + timeSlotList.size() + " time slots");
 
             // Create initial solution with categorized rooms
-            TimeTable problem = createInitialSolution(facultyList, roomList, timeSlotList, batchList, courseList);
-            logger.info("Created initial solution with " + problem.getLessonList().size() + " lessons");
+            TimeTable problem = createInitialSolution(facultyList, roomList, timeSlotList, minorTimeSlotList, batchList, courseList, minorCourseList);
+            logger.info("Created initial solution with " + problem.getLessonList().size() + " lessons and " + problem.getMinorLessonList().size() + " minor lessons");
 
             // Configure solver
             SolverConfig solverConfig = new SolverConfig()
@@ -100,13 +110,34 @@ public class TimeTableApp {
         return timeSlots;
     }
 
+    private static List<TimeSlot> createMinorTimeSlots() {
+        List<TimeSlot> minorTimeSlots = new ArrayList<>();
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+        Long id = 1L;
+
+        // Create time slots for each day
+        for (String day : days) {
+            for (Object[] slotDef : MINOR_TIME_SLOT_DEFINITIONS) {
+                LocalTime startTime = (LocalTime) slotDef[0];
+                LocalTime endTime = (LocalTime) slotDef[1];
+                String slotType = (String) slotDef[2];
+
+                minorTimeSlots.add(new TimeSlot(id++, day, startTime, endTime, slotType));
+            }
+        }
+        return minorTimeSlots;
+    }
+
     // Create initial solution with course and batch information
     private static TimeTable createInitialSolution(List<Faculty> facultyList,
                                                    List<Room> roomList,
                                                    List<TimeSlot> timeSlotList,
+                                                   List<TimeSlot> minorTimeSlotList,
                                                    List<StudentBatch> batchList,
-                                                   List<Course> courseList) {
+                                                   List<Course> courseList,
+                                                   List<Course> minorCourseList) {
         List<Lesson> lessonList = new ArrayList<>();
+        List<Lesson> minorLessonList = new ArrayList<>(); // Separate list for minor lessons
         Long lessonId = 1L;
 
         // Sorting batches by ID to ensure lessons are created in batch ID order
@@ -206,8 +237,78 @@ public class TimeTableApp {
             }
         }
 
-        logger.info(String.format("Initial solution created with %d total lessons", lessonList.size()));
-        return new TimeTable(1L, lessonList, facultyList, roomList, timeSlotList);
+        // Create minor lessons independently of any batch
+        TimeSlot minorTimeSlot = minorTimeSlotList.stream()
+                .filter(slot -> slot.getStartTime().equals(LocalTime.of(18, 0)) &&
+                        slot.getEndTime().equals(LocalTime.of(19, 30)) &&
+                        slot.getSlotType().equals("MINOR"))
+                .findFirst()
+                .orElse(null);
+
+        if (minorTimeSlot != null) {
+            for (Course minorCourse : minorCourseList) {
+                if (minorCourse.getEligibleFaculty() == null || minorCourse.getEligibleFaculty().isEmpty()) {
+                    logger.warning("Minor course " + minorCourse.getName() + " has no eligible faculty");
+                    continue;
+                }
+
+                List<Room> minorLectureRooms = new ArrayList<>();
+
+                // Load lecture rooms for this minor
+                for (Long roomId : minorCourse.getLectureRoomIDs()) {
+                    Room room = getRoomById(roomId, roomList);
+                    if (room != null) {
+                        minorLectureRooms.add(room);
+                    } else {
+                        logger.warning(String.format("Lecture room ID %d not found for minor %s", roomId, minorCourse.getCourseCode()));
+                    }
+                }
+
+//                for (Faculty faculty : minorCourse.getEligibleFaculty()) {
+//                    Room minorRoom = minorLectureRooms.get(0);
+//                    Lesson minorLesson = new Lesson(lessonId++, minorCourse, null, roomList);
+//                    minorLesson.setLessonType("MINOR");
+//                    minorLesson.setFaculty(faculty);
+//                    minorLesson.setRoom(minorRoom);
+//                    minorLesson.setTimeSlot(minorTimeSlot);
+//
+//                    minorLessonList.add(minorLesson);
+//                    logger.info(String.format("Created MINOR lesson - Course: %s, Room: %s, Faculty: %s, Lesson ID: %d",
+//                            minorCourse.getCourseCode(),
+//                            minorRoom.getRoomNumber(),
+//                            faculty.getName(),
+//                            minorLesson.getId()));
+//                }
+//
+
+                for (int i = 0; i < minorCourse.getLectureHours(); i++) {
+                    Lesson minorLesson = new Lesson(lessonId++, minorCourse, roomList);
+                    minorLesson.setLessonType("MINOR");
+
+                    if (!minorLectureRooms.isEmpty()) {
+                        Room minorRoom = minorLectureRooms.get(i % minorLectureRooms.size());
+                        minorLesson.setRoom(minorRoom);
+//                        minorLesson.setTimeSlot(minorTimeSlot);
+                        logger.info(String.format("Created MINOR lesson - Course: %s, Batch: %s, Room: %s, Lesson ID: %d",
+                                minorCourse.getCourseCode(),
+                                "ALL",
+                                minorRoom.getRoomNumber(),
+                                minorLesson.getId()));
+                    } else {
+                        logger.warning(String.format("No lecture rooms available for minor %s", minorCourse.getCourseCode()));
+                    }
+                    minorLessonList.add(minorLesson);
+                }
+
+            }
+        } else {
+            logger.warning("No available time slot for minor lessons");
+        }
+
+
+
+        logger.info(String.format("Initial solution created with %d total lessons and %d minor lessons", lessonList.size(), minorLessonList.size()));
+        return new TimeTable(1L, lessonList, minorLessonList, facultyList, roomList, timeSlotList, minorTimeSlotList);
     }
 
 
@@ -259,6 +360,25 @@ public class TimeTableApp {
                     );
                 });
 
+        solution.getMinorLessonList().stream()
+                .filter(lesson -> lesson.getTimeSlot() != null &&
+                        lesson.getRoom() != null &&
+                        lesson.getFaculty() != null)
+                .sorted(Comparator.comparing((Lesson lesson) -> dayToIndex(lesson.getTimeSlot().getDay()))
+                        .thenComparing(lesson -> lesson.getId())
+                        .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
+                .forEach(lesson -> {
+                    System.out.format(headerFormat,
+                            lesson.getTimeSlot().getDay(),
+                            lesson.getTimeSlot().getStartTime() + "-" + lesson.getTimeSlot().getEndTime(),
+                            lesson.getRoom().getRoomNumber(),
+                            "ALL",
+                            lesson.getCourse().getName(),
+                            lesson.getLessonType(),
+                            lesson.getFaculty().getName()
+                    );
+                });
+
         // Print bottom border
         System.out.format(lineFormat);
     }
@@ -288,6 +408,28 @@ public class TimeTableApp {
                             logger.log(Level.SEVERE, "Error writing to CSV", e);
                         }
                     });
+
+            solution.getMinorLessonList().stream()
+                    .filter(lesson -> lesson.getTimeSlot() != null && lesson.getRoom() != null && lesson.getFaculty() != null)
+                    .sorted(Comparator.comparing((Lesson lesson) -> dayToIndex(lesson.getTimeSlot().getDay()))
+                            .thenComparing(lesson -> lesson.getId())
+                            .thenComparing(lesson -> lesson.getTimeSlot().getStartTime()))
+                    .forEach(lesson -> {
+                        try {
+                            writer.write(String.format("%s,%s-%s,%s,%s,%s,%s,%s\n",
+                                    lesson.getTimeSlot().getDay(),
+                                    lesson.getTimeSlot().getStartTime(),
+                                    lesson.getTimeSlot().getEndTime(),
+                                    lesson.getRoom().getRoomNumber(),
+                                    "ALL",
+                                    lesson.getCourse().getName(),
+                                    lesson.getLessonType(),
+                                    lesson.getFaculty().getName()));
+                        } catch (IOException e) {
+                            logger.log(Level.SEVERE, "Error writing to CSV", e);
+                        }
+                    });
+
             logger.info("Timetable exported to " + fileName);
         } catch (IOException e) {
             logger.log(Level.SEVERE, "Error creating CSV file", e);

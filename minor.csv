@@ -1,0 +1,8 @@
+# minor.csv
+id,courseCode,name,courseType,batchId,lecture,theory,practical,credits,hoursPerWeek,eligibleFacultyIds,lectureRoomIDs
+#
+1,EC271,Digital System Design & Verification,minor,ALL,3,0,0,3,3,37,33
+2,IC278,Introduction to Research,minor,ALL,3,0,0,3,4,5,34
+3,DS272,Foundations of ML and Generative AI,minor,ALL,3,0,0,3,3,19,33
+4,DS104,Introduction to Quantum Information Science & Technology,minor,ALL,3,0,0,3,3,1,34
+5,CS151,Introduction to Cybersecurity,minor,ALL,3,0,0,3,3,26,35

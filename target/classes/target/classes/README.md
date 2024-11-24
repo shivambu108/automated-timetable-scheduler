@@ -1,2 +1,0 @@
-# atts
-Automatic TimeTable Scheduler

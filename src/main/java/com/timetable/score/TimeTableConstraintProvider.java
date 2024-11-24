@@ -70,7 +70,11 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 preferredStartTime(factory),
                 balanceDailyBatchLoad(factory),
                 contiguousLessons(factory),
-                minimizeGapsInSchedule(factory)
+                minimizeGapsInSchedule(factory),
+
+                minorValidRoom(factory),
+                minorFixedTimeslot(factory),
+                noRoomConflictForMinors(factory)
         };
     }
 
@@ -101,6 +105,7 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
 
     private Constraint roomCapacity(ConstraintFactory factory) {
         return factory.forEach(Lesson.class)
+                .filter(lesson -> lesson.getStudentBatch() != null && lesson.getRoom() != null)
                 .filter(lesson -> lesson.getStudentBatch().getStrength() > lesson.getRoom().getCapacity())
                 .penalize(HardSoftScore.ONE_HARD,
                         lesson -> lesson.getStudentBatch().getStrength() - lesson.getRoom().getCapacity())
@@ -190,6 +195,7 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
     }
 
     private boolean isLunchHourForYear(Lesson lesson) {
+        if(lesson.getStudentBatch()== null) return false;
         int year = extractYearFromBatch(lesson.getStudentBatch());
 
         LocalTime startTime = lesson.getTimeSlot().getStartTime();
@@ -207,7 +213,10 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
         return false;
     }
 
-    private int extractYearFromBatch(StudentBatch batch) {
+    private Integer  extractYearFromBatch(StudentBatch batch) {
+        if (batch == null) {
+            return null;
+        }
         return batch.getYear();
     }
 
@@ -412,6 +421,29 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
         LocalTime startTime2 = lesson2.getTimeSlot().getStartTime();
         return endTime1.equals(startTime2) ||
                 ChronoUnit.MINUTES.between(endTime1, startTime2) <= 5; // 5-minute buffer
+    }
+
+    private Constraint minorValidRoom(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(Lesson.class)
+                .filter(lesson -> lesson.getCourse().getCourseType().equals("minor")) // Filter minors
+                .filter(lesson -> !lesson.getCourse().getLectureRoomIDs().contains(lesson.getRoom().getId()))
+                .penalize("Minors must be assigned to valid rooms", HardSoftScore.ONE_HARD);
+    }
+
+    private Constraint minorFixedTimeslot(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(Lesson.class)
+                .filter(lesson -> lesson.getCourse().getCourseType().equals("minor")) // Filter minors
+                .filter(lesson -> !lesson.getTimeSlot().getStartTime().equals("18:00")) // Ensure 6:00 PM
+                .penalize("Minor courses must be scheduled at 6:00 PM", HardSoftScore.ONE_HARD);
+    }
+
+    private Constraint noRoomConflictForMinors(ConstraintFactory constraintFactory) {
+        return constraintFactory.from(Lesson.class)
+                .filter(lesson -> lesson.getCourse().getCourseType().equals("minor")) // Filter minors
+                .join(Lesson.class,
+                        Joiners.equal(Lesson::getRoom), // Same room
+                        Joiners.equal(Lesson::getTimeSlot)) // Same timeslot
+                .penalize("No room conflicts for minors", HardSoftScore.ONE_HARD);
     }
 
     private LocalTime getStartTime(Lesson lesson) {

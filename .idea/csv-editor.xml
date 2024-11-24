@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\minor.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\rooms.csv">
           <value>
             <Attribute>
@@ -39,13 +46,6 @@
           </value>
         </entry>
         <entry key="\src\main\resources\final_timetable.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="diff.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

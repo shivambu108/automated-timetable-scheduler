@@ -44,6 +44,13 @@ public class Lesson {
         this.room = null; // Room will be assigned during planning
     }
 
+    public Lesson(Long id, Course course, List<Room> roomList) {
+        this.id = id;
+        this.course = course;
+        this.roomList = roomList;
+        this.room = null; // Room will be assigned during planning
+    }
+
     // Getters and Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
