@@ -1,4 +1,4 @@
-[pom.xml](pom.xml)# Automatic Timetable Scheduler
+# Automatic Timetable Scheduler
 
 ## Overview
 The **Automatic Timetable Scheduler** is a comprehensive Java-based project designed to generate optimized and conflict-free timetables for academic institutions. Using **OptaPlanner**, the project ensures that all scheduling constraints are met while balancing faculty workloads, student requirements, and room availability. This project emphasizes the use of Object-Oriented Programming (OOP) principles and advanced Java techniques, providing a robust foundation for solving real-world scheduling problems.
@@ -255,16 +255,16 @@ To run the **Automatic Timetable Scheduler** project using IntelliJ IDEA:
 
 Attach screenshots of the following sample executions:
 
-- **Input Data**: [Screenshot 2024-11-27 235219.png](../../psychOOPS/Screenshot%202024-11-27%20235219.png)
-[Screenshot 2024-11-27 235233.png](../../psychOOPS/Screenshot%202024-11-27%20235233.png)
-[Screenshot 2024-11-27 235257.png](../../psychOOPS/Screenshot%202024-11-27%20235257.png)
-[Screenshot 2024-11-27 235307.png](../../psychOOPS/Screenshot%202024-11-27%20235307.png)
-[Screenshot 2024-11-27 235317.png](../../psychOOPS/Screenshot%202024-11-27%20235317.png)
-- **Generated Timetable**: [Screenshot 2024-11-27 233303.png](../../psychOOPS/Screenshot%202024-11-27%20233303.png)
-[Screenshot 2024-11-27 233238.png](../../psychOOPS/Screenshot%202024-11-27%20233238.png)
+- **Input Data**: [Screenshot 2024-11-27 235219.png](resources/Screenshot%202024-11-27%20235219.png)
+[Screenshot 2024-11-27 235233.png](resources/Screenshot%202024-11-27%20235233.png)
+[Screenshot 2024-11-27 235257.png](resources/Screenshot%202024-11-27%20235257.png)
+[Screenshot 2024-11-27 235307.png](resources/Screenshot%202024-11-27%20235307.png)
+[Screenshot 2024-11-27 235317.png](resources/Screenshot%202024-11-27%20235317.png)
+- **Generated Timetable**: [Screenshot 2024-11-27 233303.png](resources/Screenshot%202024-11-27%20233303.png)
+[Screenshot 2024-11-27 233238.png](resources/Screenshot%202024-11-27%20233238.png)
 
 
-- **Console Logs**: [Screenshot 2024-11-27 223955.png](../../psychOOPS/Screenshot%202024-11-27%20223955.png)
-[Screenshot 2024-11-27 224026.png](../../psychOOPS/Screenshot%202024-11-27%20224026.png)
+- **Console Logs**: [Screenshot 2024-11-27 223955.png](resources/Screenshot%202024-11-27%20223955.png)
+[Screenshot 2024-11-27 224026.png](resources/Screenshot%202024-11-27%20224026.png)
 
 
