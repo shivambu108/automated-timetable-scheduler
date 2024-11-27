@@ -24,7 +24,6 @@ public class Faculty extends User {
         this.preferredSlots = new ArrayList<>(); // Initialize preferred slots
     }
 
-
     // Getters and Setters
     public List<String> getSubjects() {
         return subjects;

@@ -13,7 +13,6 @@ public class StudentBatch {
     private List<Long> lectureRoomIDs;     // field for lecture room IDs
     private List<Long> practicalRoomIDs;   // field for practical (lab) room IDs
 
-
     // Constructor
     public StudentBatch(Long id, String batchName, int year, int strength, List<Course> courses, List<Long> lectureRoomIDs, List<Long> practicalRoomIDs) {
         this.id = id;

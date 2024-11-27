@@ -2,11 +2,24 @@ package com.timetable.score;
 
 import com.timetable.domain.*;
 import org.optaplanner.core.api.score.buildin.hardsoft.HardSoftScore;
-import org.optaplanner.core.api.score.stream.*;
+import org.optaplanner.core.api.score.stream.Constraint;
+import org.optaplanner.core.api.score.stream.ConstraintFactory;
+import org.optaplanner.core.api.score.stream.ConstraintProvider;
+import org.optaplanner.core.api.score.stream.ConstraintCollectors;
+import org.optaplanner.core.api.score.stream.Joiners;
 
+import java.time.DayOfWeek;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
+import java.util.Collections;
+import java.util.Objects;
+
+import static java.util.Locale.filter;
+import static java.util.stream.Collectors.filtering;
+import static java.util.stream.Collectors.toList;
+import static org.optaplanner.core.api.score.stream.ConstraintCollectors.count;
+import static org.optaplanner.core.api.score.stream.ConstraintCollectors.sum;
 
 public class TimeTableConstraintProvider implements ConstraintProvider {
     // Constants

@@ -11,4 +11,3 @@ public enum RoomType {
         return false;
     }
 }
-

@@ -11,7 +11,6 @@ public class Room {
 
     public Room() {}
 
-
     public Room(Long id, String roomNumber, int capacity, RoomType roomType) {
         this.id = id;
         this.roomNumber = roomNumber;

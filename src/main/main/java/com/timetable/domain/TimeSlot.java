@@ -1,5 +1,7 @@
 package com.timetable.domain;
 
+import java.time.DayOfWeek;
+
 import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Objects;

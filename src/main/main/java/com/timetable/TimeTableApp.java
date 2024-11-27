@@ -1,21 +1,30 @@
 package com.timetable;
 
 import com.timetable.domain.*;
-import com.timetable.score.TimeTableConstraintProvider;
-import com.timetable.util.CSVDataLoader;
 import org.optaplanner.core.api.solver.Solver;
 import org.optaplanner.core.api.solver.SolverFactory;
+import org.optaplanner.core.api.solver.SolverJob;
+import org.optaplanner.core.api.solver.SolverManager;
+import org.optaplanner.core.config.constructionheuristic.ConstructionHeuristicPhaseConfig;
+import org.optaplanner.core.config.constructionheuristic.ConstructionHeuristicType;
+import org.optaplanner.core.config.localsearch.LocalSearchPhaseConfig;
+import org.optaplanner.core.config.localsearch.LocalSearchType;
 import org.optaplanner.core.config.solver.SolverConfig;
+import com.timetable.score.TimeTableConstraintProvider;
+import com.timetable.util.CSVDataLoader;
+import org.optaplanner.core.config.solver.termination.TerminationConfig;
+import org.optaplanner.core.config.solver.SolverConfig;
+import org.optaplanner.core.config.solver.SolverManagerConfig;
+import org.optaplanner.core.config.localsearch.LocalSearchType;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.logging.Level;
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class TimeTableApp {
     private static final Logger logger = Logger.getLogger(TimeTableApp.class.getName());

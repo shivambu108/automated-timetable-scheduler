@@ -18,6 +18,7 @@ public class Course {
     private int hoursPerWeek; // Calculated from lecture, theory, and practical hours
     private List<Faculty> eligibleFaculty; // Faculty eligible to teach the course
     private List<Long> lectureRoomIDs; // Specific to minors
+
     private boolean isMinor;
 
     // Constructor to initialize course details
