@@ -198,6 +198,7 @@ public class TimeTableConstraintProvider implements ConstraintProvider {
                 weeklyLabScheduling(factory),
                 balanceFacultyLoad(factory),
                 minimizeGapsInSchedule(factory)
+                // and many more
         };
     }
 }
@@ -255,16 +256,24 @@ To run the **Automatic Timetable Scheduler** project using IntelliJ IDEA:
 
 Attach screenshots of the following sample executions:
 
-- **Input Data**: [Screenshot 2024-11-27 235219.png](resources/Screenshot%202024-11-27%20235219.png)
-[Screenshot 2024-11-27 235233.png](resources/Screenshot%202024-11-27%20235233.png)
-[Screenshot 2024-11-27 235257.png](resources/Screenshot%202024-11-27%20235257.png)
-[Screenshot 2024-11-27 235307.png](resources/Screenshot%202024-11-27%20235307.png)
-[Screenshot 2024-11-27 235317.png](resources/Screenshot%202024-11-27%20235317.png)
-- **Generated Timetable**: [Screenshot 2024-11-27 233303.png](resources/Screenshot%202024-11-27%20233303.png)
-[Screenshot 2024-11-27 233238.png](resources/Screenshot%202024-11-27%20233238.png)
+- **Input Data**: 
 
+![Screenshot 2024-11-27 235219.png](resources/Screenshot%202024-11-27%20235219.png)
+![Screenshot 2024-11-27 235233.png](resources/Screenshot%202024-11-27%20235233.png)
+![Screenshot 2024-11-27 235257.png](resources/Screenshot%202024-11-27%20235257.png)
+![Screenshot 2024-11-27 235307.png](resources/Screenshot%202024-11-27%20235307.png)
+![Screenshot 2024-11-27 235317.png](resources/Screenshot%202024-11-27%20235317.png)
 
-- **Console Logs**: [Screenshot 2024-11-27 223955.png](resources/Screenshot%202024-11-27%20223955.png)
-[Screenshot 2024-11-27 224026.png](resources/Screenshot%202024-11-27%20224026.png)
+- **Console Logs**:
+
+![Screenshot 2024-11-27 223955.png](resources/Screenshot%202024-11-27%20223955.png)
+![Screenshot 2024-11-27 224026.png](resources/Screenshot%202024-11-27%20224026.png)
+
+- **Generated Timetable**: 
+
+![Screenshot 2024-11-27 233303.png](resources/Screenshot%202024-11-27%20233303.png)
+![Screenshot 2024-11-27 233238.png](resources/Screenshot%202024-11-27%20233238.png)
+![img.png](resources/img.png)
+
 
 
