@@ -1,3 +1,4 @@
+#faculty.csv
 id,name,email,password,subjects,maxHoursPerDay
 1,Dr. Abdul Wahid,abc@iiitdwd.ac.in,pass123,Introduction to DS and AI;AI for Cybersecurity,4
 2,Dr. Animesh Chaturvedi,abc@iiitdwd.ac.in,pass123,Data Science System;Algorithms and Artificial Intelligence,4
