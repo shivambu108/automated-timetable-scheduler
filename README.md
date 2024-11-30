@@ -271,8 +271,8 @@ Screenshots of the sample executions:
 
 - **Generated Timetable**: 
 
-![Screenshot 2024-11-27 233303.png](resources/Screenshot%202024-11-27%20233303.png)
 ![Screenshot 2024-11-27 233238.png](resources/Screenshot%202024-11-27%20233238.png)
+![Screenshot 2024-11-27 233303.png](resources/Screenshot%202024-11-27%20233303.png)
 ![img.png](resources/img.png)
 
 
