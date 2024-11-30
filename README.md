@@ -254,7 +254,7 @@ To run the **Automatic Timetable Scheduler** project using IntelliJ IDEA:
 
 ## Execution Samples
 
-Attach screenshots of the following sample executions:
+Screenshots of the sample executions:
 
 - **Input Data**: 
 
