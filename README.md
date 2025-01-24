@@ -1,7 +1,7 @@
-# Automatic Timetable Scheduler
+# Automated Timetable Scheduler
 
 ## Overview
-The **Automatic Timetable Scheduler** is a comprehensive Java-based project designed to generate optimized and conflict-free timetables for academic institutions. Using **OptaPlanner**, the project ensures that all scheduling constraints are met while balancing faculty workloads, student requirements, and room availability. This project emphasizes the use of Object-Oriented Programming (OOP) principles and advanced Java techniques, providing a robust foundation for solving real-world scheduling problems.
+The **Automated Timetable Scheduler** is a comprehensive Java-based project designed to generate optimized and conflict-free timetables for academic institutions. Using **OptaPlanner**, the project ensures that all scheduling constraints are met while balancing faculty workloads, student requirements, and room availability. This project emphasizes the use of Object-Oriented Programming (OOP) principles and advanced Java techniques, providing a robust foundation for solving real-world scheduling problems.
 
 ## Key Features
 
